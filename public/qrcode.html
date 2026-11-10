@@ -79,6 +79,9 @@
     padding: 14px; margin: 6px auto 4px; line-height: 0;
   }
   .qr-box svg { display: block; width: 220px; height: 220px; }
+  .qr-box img { display: block; width: 220px; max-width: 100%; height: auto; margin: 0 auto; border-radius: 6px; }
+  .qr-fallback { padding: 16px 10px; font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .qr-fallback a { color: var(--brand); word-break: break-all; font-weight: 600; }
   .url { font-size: 11px; color: var(--muted); word-break: break-all; max-width: 260px; margin: 0 auto; }
   .meta { font-size: 12px; color: var(--muted); }
   .meta b { color: var(--ink); font-weight: 600; }
@@ -2507,21 +2510,28 @@ var qrcode = function() {
       { id: "release", file: "YozerHealth-v1.0.0-release-arm64.apk" },
       { id: "debug",   file: "YozerHealth-v1.0.0-debug-arm64.apk" }
     ];
+    // 用当前页面所在目录拼出 apks 绝对地址，子目录部署也能正确指向
     var dir = location.pathname.replace(/[^/]*$/, "");
     var base = location.origin + dir;
     FILES.forEach(function (f) {
       var url = base + "apks/" + f.file;
+      var box = document.getElementById("qr-" + f.id);
+      var urlEl = document.getElementById("url-" + f.id);
+      var a = document.getElementById("dl-" + f.id);
+      if (urlEl) urlEl.textContent = url;
+      if (a) a.href = url;
       try {
+        if (!QR) throw new Error("QR 库未加载");
         var qr = QR(0, "M");
         qr.addData(url);
         qr.make();
-        document.getElementById("qr-" + f.id).innerHTML = qr.createSvgTag(5, 10);
+        // 用 <img> data URL 渲染：比内联 SVG 在更多环境（代理/WebView/严格 CSP）下稳定显示
+        box.innerHTML = qr.createImgTag(6, 12);
       } catch (e) {
-        document.getElementById("qr-" + f.id).textContent = url;
+        // 兜底：二维码生成失败时显示可点击下载链接，避免空白
+        box.innerHTML = '<div class="qr-fallback">二维码生成失败，请直接点击下方按钮或此链接下载：<br>'
+          + '<a href="' + url + '">' + url + '</a></div>';
       }
-      document.getElementById("url-" + f.id).textContent = url;
-      var a = document.getElementById("dl-" + f.id);
-      a.href = url;
     });
   })();
 </script>
