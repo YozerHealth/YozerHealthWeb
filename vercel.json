@@ -2,8 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "rewrites": [
-    { "source": "/download/:variant", "destination": "/api/download?variant=:variant" },
-    { "source": "/api/admin/export.csv", "destination": "/api/admin/export?format=csv" }
+    { "source": "/download/:variant", "destination": "/api/download?variant=:variant" }
   ],
   "headers": [
     {

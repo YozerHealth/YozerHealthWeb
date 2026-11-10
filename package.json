@@ -2,7 +2,7 @@
   "name": "yozerhealth-website",
   "version": "1.0.0",
   "private": true,
-  "description": "悦泽健康 YozerHealth 官网介绍、APK 下载与访问统计管理后台（Vercel 静态 + Serverless）",
+  "description": "悦泽健康 YozerHealth 官网介绍、APK 下载与访问统计（Vercel 静态 + Serverless）",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"

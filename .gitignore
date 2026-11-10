@@ -1,0 +1,5 @@
+# 运行时数据（首次启动自动生成，勿提交）
+data/admin.json
+data/events.jsonl
+data/demo-events.jsonl
+node_modules/

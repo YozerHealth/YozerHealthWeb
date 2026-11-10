@@ -1,0 +1,6 @@
+node_modules
+data
+tools
+server.js
+_work
+*.log
