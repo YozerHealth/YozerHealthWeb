@@ -1,0 +1,17 @@
+{
+  "name": "yozerhealth-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "悦泽健康 YozerHealth 官网介绍、APK 下载与访问统计管理后台（Vercel 静态 + Serverless）",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "optionalDependencies": {
+    "@tencent-ai/workbuddy-cloud-sdk": "^0.1.4-dev.ca27990.202610161713"
+  }
+}

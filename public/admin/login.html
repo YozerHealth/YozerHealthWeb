@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>管理后台登录 · 悦泽健康 YozerHealth</title>
+<link rel="icon" type="image/png" href="/assets/app-icon.png">
+<link rel="stylesheet" href="admin.css">
+<script src="/assets/i18n-dict.js"></script>
+<script src="/assets/i18n.js"></script>
+</head>
+<body class="login-page">
+  <div class="login-box">
+    <button class="lang-switch login-lang" type="button" data-yh-lang-toggle aria-label="Switch to English">EN</button>
+    <div class="login-brand">
+      <img src="/assets/logo.png" alt="悦泽健康 YozerHealth">
+      <h1>管理后台登录</h1>
+      <p>访问与下载统计看板 · 仅授权人员可进入</p>
+    </div>
+
+    <form id="loginForm" autocomplete="on">
+      <div class="field">
+        <label for="username">管理员账号</label>
+        <div class="input-wrap">
+          <input id="username" name="username" type="text" value="admin" required autocomplete="username" spellcheck="false">
+        </div>
+      </div>
+      <div class="field">
+        <label for="password">登录密码</label>
+        <div class="input-wrap">
+          <input id="password" name="password" type="password" required autocomplete="current-password" placeholder="请输入管理员密码">
+          <button class="eye-btn" id="eyeBtn" type="button" aria-label="显示密码">显示</button>
+        </div>
+      </div>
+      <div class="login-error" id="err" role="alert"></div>
+      <button class="btn-login" id="submitBtn" type="submit">登录管理后台</button>
+    </form>
+
+    <div class="login-foot">
+      会话有效期 2 小时；连续 5 次密码错误将临时锁定 10 分钟。<br>
+      初始密码在服务端首次启动时生成并只打印一次，可用
+      <span class="mono">node server.js --set-password &lt;新密码&gt;</span> 修改。<br>
+      <a href="/">← 返回官网首页</a>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>
