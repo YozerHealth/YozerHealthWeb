@@ -111,9 +111,21 @@
     return s;
   }
 
+  var appliedLang = null; // 上次 apply 已将 DOM 渲染成的语言；用于避免重复全文档遍历
+
   function apply(root) {
     var scope = root || global.document;
     if (!scope || !global.document) return;
+    // 性能优化：默认中文且 DOM 从未被英文化过时，初始 HTML 本就是中文，
+    // 无需任何遍历/写入，直接跳过 —— 避免 120 册故事等大型页面整文档遍历阻塞主线程。
+    // 仅当用户真正切到英文、或要把英文还原回中文时才遍历一次。
+    if (lang === 'zh' && appliedLang !== 'en') {
+      appliedLang = 'zh';
+      return;
+    }
+    // 进入全量翻译分支：记录本次实际渲染成的语言（切英文时记为 'en'，
+    // 把英文还原回中文时记为 'zh'），否则下次切回中文会误判走短路、无法还原 DOM。
+    appliedLang = lang;
     var walker = global.document.createTreeWalker(scope, global.NodeFilter.SHOW_TEXT, null, false);
     var nodes = [], node;
     while ((node = walker.nextNode())) nodes.push(node);
@@ -130,7 +142,8 @@
         textOrigins.set(n, orig);
       }
       if (!CJK.test(orig)) return;
-      n.nodeValue = isEn() ? t(orig) : orig;
+      var nextVal = isEn() ? t(orig) : orig;
+      if (n.nodeValue !== nextVal) n.nodeValue = nextVal;
     });
 
     if (!scope.querySelectorAll) return;
@@ -144,7 +157,8 @@
         if (!(a in saved)) saved[a] = el.getAttribute(a);
         var orig = saved[a];
         if (!orig || !CJK.test(orig)) return;
-        el.setAttribute(a, isEn() ? t(orig) : orig);
+        var nextAttr = isEn() ? t(orig) : orig;
+        if (el.getAttribute(a) !== nextAttr) el.setAttribute(a, nextAttr);
       });
     });
   }
@@ -187,13 +201,28 @@
     Array.prototype.forEach.call(binds, function (b) {
       b.addEventListener('click', toggle);
     });
-    // 动态渲染（图表、表格）产生的新节点自动跟随当前语言
+    // 动态渲染（图表、表格）产生的新节点自动跟随当前语言。
+    // 仅翻译「新增节点」，避免每次 DOM 变动都全文档重新遍历，减少切换页面时的卡顿。
     if (global.MutationObserver) {
+      var pending = [];
       var queued = false;
-      var obs = new global.MutationObserver(function () {
+      var obs = new global.MutationObserver(function (mutations) {
+        for (var mi = 0; mi < mutations.length; mi++) {
+          var m = mutations[mi];
+          if (m.addedNodes) {
+            for (var ni = 0; ni < m.addedNodes.length; ni++) pending.push(m.addedNodes[ni]);
+          }
+        }
         if (queued) return;
         queued = true;
-        setTimeout(function () { queued = false; apply(global.document); }, 0);
+        setTimeout(function () {
+          queued = false;
+          var batch = pending; pending = [];
+          for (var bi = 0; bi < batch.length; bi++) {
+            var nd = batch[bi];
+            if (nd && (nd.nodeType === 1 || nd.nodeType === 3)) apply(nd);
+          }
+        }, 0);
       });
       obs.observe(global.document.documentElement, { childList: true, subtree: true, characterData: false });
     }

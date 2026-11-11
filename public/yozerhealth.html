@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="悦泽健康 YozerHealth —— 把一家人的体检报告、化验单与血压血糖记录收进一部手机。端侧识别、趋势可读、就医视图、纯本地离线。下载 V1.0.0 Android 版。">
+<meta name="theme-color" content="#0f766e">
+<title>悦泽健康 YozerHealth · 家庭健康档案，只留在这部手机里</title>
+<link rel="icon" type="image/png" href="/assets/app-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/i18n-dict.js"></script>
+<script src="/assets/i18n.js"></script>
+</head>
+<body>
+
+<!-- ==================== 顶部导航 ==================== -->
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/index.html" aria-label="返回 Yozer 首页">
+      <img class="brand-mark" src="/assets/logo-mark.png" alt="">
+      <span class="brand-text"><b>悦泽健康</b><small>YozerHealth</small></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/index.html">首页</a>
+      <a href="#features">功能</a>
+      <a href="#trend">趋势</a>
+      <a href="/privacy.html">隐私政策</a>
+      <a href="#download">下载</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" title="切换深浅主题" aria-label="切换深浅主题">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+      <button class="lang-switch" type="button" data-yh-lang-toggle aria-label="Switch to English">EN</button>
+      <a class="btn btn-primary btn-sm" href="/download/release" data-dl>下载 App</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ==================== Hero ==================== -->
+<section class="hero wrap">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> V1.0.0 正式发布 · Android</div>
+    <h1>把一家人的健康档案<br><span class="hl">收进一部手机</span></h1>
+    <p class="lead">
+      体检报告塞在抽屉里，化验单躺在相册深处，去年那次 CT 写了什么再也翻不到。
+      悦泽健康拍照或导入 PDF，在本机把报告整理成能查、能比、能在诊室里讲清楚的记录。
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="/download/release" data-dl>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>
+        下载正式版 V1.0.0
+      </a>
+      <a class="btn btn-ghost btn-lg" href="#features">先看看功能</a>
+    </div>
+    <div class="hero-meta">
+      <span>Android 8.0+</span><i></i>
+      <span>arm64-v8a</span><i></i>
+      <span id="heroSize">约 25 MB</span><i></i>
+      <span>无需注册 · 无需联网</span>
+    </div>
+    <div class="hero-tags">
+      <span>端侧 OCR 识别</span><span>参考区间与逐点数值</span><span>医生视图 PDF</span><span>字段级加密</span>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-label="应用界面示意图">
+    <div class="glow"></div>
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="ph-top"><span class="ph-title">健康档案</span><span class="ph-avatar">全</span></div>
+        <div class="ph-member">全家 · 一键切换家庭成员</div>
+        <div class="ph-card">
+          <div class="ph-card-h"><b>血压</b><span>今天 08:20</span></div>
+          <div class="ph-bp"><div><em>128</em><small>收缩压</small></div><div><em>82</em><small>舒张压</small></div><span class="ph-ok">正常</span></div>
+        </div>
+        <div class="ph-card">
+          <div class="ph-card-h"><b>血压趋势</b><span>近 30 天</span></div>
+          <svg viewBox="0 0 220 92" width="100%" height="88" role="img" aria-label="血压趋势示意图">
+            <g stroke="currentColor" stroke-opacity=".14" stroke-width="1">
+              <line x1="6" y1="18" x2="214" y2="18"/><line x1="6" y1="46" x2="214" y2="46"/><line x1="6" y1="74" x2="214" y2="74"/>
+            </g>
+            <g stroke="#d97706" stroke-opacity=".65" stroke-width="1" stroke-dasharray="4 4"><line x1="6" y1="10" x2="214" y2="10"/><line x1="6" y1="80" x2="214" y2="80"/></g>
+            <polyline points="8,34 38,30 68,38 98,26 128,32 158,22 188,28 212,24" fill="none" stroke="#0f766e" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+            <polyline points="8,62 38,58 68,66 98,56 128,62 158,54 188,60 212,56" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+            <g fill="#0f766e"><circle cx="8" cy="34" r="2.4"/><circle cx="68" cy="38" r="2.4"/><circle cx="128" cy="32" r="2.4"/><circle cx="188" cy="28" r="2.4"/></g>
+            <g fill="#38bdf8"><circle cx="38" cy="58" r="2.4"/><circle cx="98" cy="56" r="2.4"/><circle cx="158" cy="54" r="2.4"/><circle cx="212" cy="56" r="2.4"/></g>
+          </svg>
+          <div class="ph-legend"><span><i style="background:#0f766e"></i>收缩压</span><span><i style="background:#38bdf8"></i>舒张压</span><span><i style="background:#d97706"></i>参考线</span></div>
+        </div>
+        <div class="ph-card ph-row"><b>最近记录</b><span>化验单 · 3 份</span></div>
+        <div class="ph-nav"><span class="on">首页</span><span>分类</span><span>分析</span><span>我的</span></div>
+      </div>
+    </div>
+    <div class="float-card fc-a"><span class="fc-ico">✓</span><div><b>异常项已标出</b><small>参考区间自动比对</small></div></div>
+    <div class="float-card fc-b"><span class="fc-ico">▤</span><div><b>医生视图</b><small>一页汇总 · 可导出 PDF</small></div></div>
+    <p class="visual-note">界面为功能示意图，非真机截图</p>
+  </div>
+</section>
+
+<!-- ==================== 信任条 ==================== -->
+<section class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-item"><b>0</b><span>账号 / 云端</span></div>
+    <div class="trust-item"><b>0</b><span>源码网络请求</span></div>
+    <div class="trust-item"><b>端侧</b><span>报告识别，不上传</span></div>
+    <div class="trust-item"><b>AES-256-GCM</b><span>敏感字段加密落盘</span></div>
+  </div>
+</section>
+
+<!-- ==================== 功能 ==================== -->
+<section class="section wrap" id="features">
+  <div class="sec-head">
+    <div class="kicker">FUNCTIONS</div>
+    <h2>从一张报告，到能讲清的病史</h2>
+    <p>围绕「收得进、看得懂、带得走、不外传」设计的完整链路，全部功能都在本机完成。</p>
+  </div>
+  <div class="feature-grid">
+    <article class="feature reveal">
+      <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.5"/><path d="M17 4v2"/></svg></div>
+      <h3>拍照 / PDF，报告变数据</h3>
+      <p>拍照、相册图或导入 PDF，本机 OCR 自动判断报告类型：化验单逐项填入数值、单位与参考区间并标出偏高偏低；影像类报告只提取「检查所见」与「诊断结论」。保存前可对照原图逐项核对、改错、补录。</p>
+      <span class="f-tag">原件永久留档 · 可缩放翻页</span>
+    </article>
+    <article class="feature reveal">
+      <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></div>
+      <h3>不想打字也能记</h3>
+      <p>模板录入、随手文字、语音口述（说一句「血压 138 88」自动拆成结构化指标）、疾病与用药时间线等共 8 种入口。血压、血糖、体重、心率、血氧自动归入五大类档案，全局搜索一搜就到。</p>
+      <span class="f-tag">8 种录入入口</span>
+    </article>
+    <article class="feature reveal">
+      <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 17l5-6 4 3 4-7 5 4"/><path d="M3 21h18M3 4v17"/></svg></div>
+      <h3>血压双线趋势</h3>
+      <p>收缩压与舒张压两条曲线同屏，各有正常参考上下限虚线与每个采样点的数值，落在区间外的点直接标红。支持左右滑动与捏合缩放调整时间范围，下方列出最近 50 条明细，越界行单独着色。</p>
+      <span class="f-tag">滑动 / 缩放 · 最近 50 条</span>
+    </article>
+    <article class="feature reveal">
+      <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 12h4l2-5 3 10 2-6 2 3h5"/><path d="M3 4v16h18" stroke-opacity=".4"/></svg></div>
+      <h3>核心指标曲线</h3>
+      <p>血压、血氧、体重、心率等指标各有独立曲线，同时显示参考值、参考上下限与逐点数值；最近记录表格中对超出参考线的整行加浅色背景，异常值加粗标红，一眼定位问题时段。</p>
+      <span class="f-tag">参考区间 · 逐点数值</span>
+    </article>
+    <article class="feature reveal">
+      <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h4M10 12h5M10 16h5"/><circle cx="18" cy="18" r="3"/></svg></div>
+      <h3>就诊时，把手机递过去</h3>
+      <p>「医生视图」一页汇总近 3 月关键异常、当前用药、疾病与用药时间线、过敏史与手术史；可切成大字号展示模式，或导出为多页 PDF 提前发给医生。摘要末页明确标注就诊参考声明。</p>
+      <span class="f-tag">大字号展示 · PDF 导出</span>
+    </article>
+    <article class="feature reveal">
+      <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5M15 19c0-2.2 1.2-3.6 3-3.6s3 1.4 3 3.6"/></svg></div>
+      <h3>一家人的档案互不干扰</h3>
+      <p>多位家庭成员独立建档、一键切换；每位成员的指标、报告、疾病与用药记录彼此隔离。换手机时用备份包整体迁移，图片与 PDF 原件一起带走，导入后保持原有 ID 与关联关系。</p>
+      <span class="f-tag">多成员 · 备份迁移</span>
+    </article>
+    <article class="feature reveal">
+      <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 15v2"/></svg></div>
+      <h3>隐私不是选项，是地基</h3>
+      <p>无需注册登录、没有账号、没有云端。敏感字段由系统 Keystore 托管的 AES-256-GCM 密钥加密落盘，另有 PIN 码与指纹 / 面容应用锁。OCR 模型内置手机，语音识别不保存音频。</p>
+      <span class="f-tag">字段级加密 · 应用锁</span>
+    </article>
+    <article class="feature reveal">
+      <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="2.5"/></svg></div>
+      <h3>导出全部数据为 PDF</h3>
+      <p>文字记录与按时间线排列的图片报告、PDF 报告首页预览，可整理成一份完整 PDF；导出与导入备份包带进度提示和成功 / 失败状态，重操作在后台线程执行，不卡界面。</p>
+      <span class="f-tag">时间线归档 · 进度反馈</span>
+    </article>
+  </div>
+</section>
+
+<!-- ==================== 痛点 ==================== -->
+<section class="section section-alt" id="pain">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">WHY</div>
+      <h2>这些麻烦，是不是很熟悉</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-row reveal"><div class="pain-q"><span>01</span>报告散在纸质单、相册和好几家医院的 App 里，要用时翻不到。</div><div class="pain-arrow">→</div><div class="pain-a"><b>一处归档</b>拍照 / PDF 统一入库，原件留档，全局搜索按成员、按类别一搜就到。</div></div>
+      <div class="pain-row reveal"><div class="pain-q"><span>02</span>化验单上一堆数字和箭头，过几个月就看不懂哪个要紧。</div><div class="pain-arrow">→</div><div class="pain-a"><b>趋势看得懂</b>参考上下限、逐点数值、异常标红，趋势图还能左右滑动缩放看不同时间段。</div></div>
+      <div class="pain-row reveal"><div class="pain-q"><span>03</span>诊室里医生问「以前指标怎么样」，只能凭印象答个大概。</div><div class="pain-arrow">→</div><div class="pain-a"><b>一页讲清</b>医生视图汇总病史、用药与近期异常，大字号展示或导出 PDF 提前发过去。</div></div>
+      <div class="pain-row reveal"><div class="pain-q"><span>04</span>健康数据太私密，不想交给任何云服务和账号体系。</div><div class="pain-arrow">→</div><div class="pain-a"><b>只留本机</b>无账号、无云端，源码中无任何网络请求，加密存储再加应用锁。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 趋势图详解 ==================== -->
+<section class="section wrap" id="trend">
+  <div class="trend-layout">
+    <div class="trend-copy">
+      <div class="kicker">READABLE DATA</div>
+      <h2>指标不是一串孤立数字</h2>
+      <p>趋势页把血压的收缩压与舒张压画在同一坐标系里，配上正常参考上下限虚线与每个采样点的数值；超出区间的点标红，下方表格同步列出最近 50 条记录，越界行用单独背景色区分。</p>
+      <ul class="tick-list">
+        <li>参考值、参考上限 / 下限同屏显示</li>
+        <li>单指左右拖动平移、双指捏合缩放时间范围</li>
+        <li>血压明细按「日期 / 时间 / 舒张压 / 收缩压」排列</li>
+        <li>血氧、体重、心率等指标同样带参考区间与逐点值</li>
+      </ul>
+      <a class="text-link" href="#download">下载后亲自试试 <span>→</span></a>
+    </div>
+    <div class="trend-figure reveal">
+      <div class="fig-head"><b>血压趋势 · 示意</b><span>最近 12 次记录</span></div>
+      <svg viewBox="0 0 620 270" width="100%" role="img" aria-label="血压趋势与参考区间示意图">
+        <defs>
+          <linearGradient id="band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f766e" stop-opacity=".09"/><stop offset="1" stop-color="#0f766e" stop-opacity=".02"/></linearGradient>
+        </defs>
+        <rect x="46" y="46" width="556" height="112" fill="url(#band)"/>
+        <g stroke="currentColor" stroke-opacity=".13" stroke-width="1">
+          <line x1="46" y1="30" x2="602" y2="30"/><line x1="46" y1="74" x2="602" y2="74"/><line x1="46" y1="118" x2="602" y2="118"/><line x1="46" y1="162" x2="602" y2="162"/><line x1="46" y1="206" x2="602" y2="206"/>
+        </g>
+        <g stroke="#c2410c" stroke-opacity=".7" stroke-width="1.3" stroke-dasharray="6 5">
+          <line x1="46" y1="46" x2="602" y2="46"/><line x1="46" y1="158" x2="602" y2="158"/>
+        </g>
+        <text x="52" y="41" font-size="11" fill="#c2410c">收缩压参考上限 140</text>
+        <text x="52" y="153" font-size="11" fill="#c2410c">舒张压参考下限 60</text>
+        <polyline points="60,86 110,78 160,92 210,70 260,84 310,58 360,74 410,66 460,88 510,72 560,80 596,68" fill="none" stroke="#0f766e" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <polyline points="60,182 110,176 160,188 210,170 260,180 310,166 360,176 410,168 460,186 510,172 560,180 596,170" fill="none" stroke="#0284c7" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <g fill="#0f766e"><circle cx="60" cy="86" r="3"/><circle cx="160" cy="92" r="3"/><circle cx="260" cy="84" r="3"/><circle cx="360" cy="74" r="3"/><circle cx="460" cy="88" r="3"/><circle cx="560" cy="80" r="3"/></g>
+        <g fill="#0284c7"><circle cx="110" cy="176" r="3"/><circle cx="210" cy="170" r="3"/><circle cx="310" cy="166" r="3"/><circle cx="410" cy="168" r="3"/><circle cx="510" cy="172" r="3"/><circle cx="596" cy="170" r="3"/></g>
+        <circle cx="310" cy="58" r="5.5" fill="#dc2626"/><text x="296" y="48" font-size="11" fill="#dc2626">148</text>
+        <g font-size="10" fill="currentColor" fill-opacity=".62">
+          <text x="52" y="228">10/08</text><text x="152" y="228">10/14</text><text x="252" y="228">10/20</text><text x="352" y="228">10/26</text><text x="452" y="228">11/01</text><text x="552" y="228">11/07</text>
+        </g>
+        <g font-size="11"><rect x="46" y="242" width="10" height="3" rx="1.5" fill="#0f766e"/><text x="62" y="248" fill="currentColor" fill-opacity=".75">收缩压</text><rect x="126" y="242" width="10" height="3" rx="1.5" fill="#0284c7"/><text x="142" y="248" fill="currentColor" fill-opacity=".75">舒张压</text><rect x="206" y="242" width="10" height="3" rx="1.5" fill="#c2410c"/><text x="222" y="248" fill="currentColor" fill-opacity=".75">参考线</text><rect x="286" y="242" width="10" height="3" rx="1.5" fill="#dc2626"/><text x="302" y="248" fill="currentColor" fill-opacity=".75">越界采样点</text></g>
+      </svg>
+      <p class="fig-note">图表为功能示意图，数据与刻度仅用于说明显示方式。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 使用流程 ==================== -->
+<section class="section section-alt" id="flow">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">HOW IT WORKS</div><h2>四步，把病历整理好</h2></div>
+    <div class="flow-grid">
+      <div class="flow-step reveal"><span class="flow-n">1</span><h3>建档</h3><p>给每位家庭成员建立独立档案，随时一键切换。</p></div>
+      <div class="flow-step reveal"><span class="flow-n">2</span><h3>录入</h3><p>拍照、导入 PDF、语音口述或手动录入，原件与结构化数据一起保存。</p></div>
+      <div class="flow-step reveal"><span class="flow-n">3</span><h3>查看</h3><p>按分类、时间线与趋势图查看，异常项与参考区间一眼可见。</p></div>
+      <div class="flow-step reveal"><span class="flow-n">4</span><h3>就诊</h3><p>打开医生视图，或导出 PDF 摘要，把病史完整讲给医生。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 隐私 ==================== -->
+<section class="section wrap" id="privacy">
+  <div class="privacy-card reveal">
+    <div class="privacy-copy">
+      <div class="kicker">PRIVACY BY DESIGN</div>
+      <h2>你的健康数据，不出这部手机</h2>
+      <p>应用采用纯本地架构：全部记录保存在本机数据库，源码中不包含任何网络请求代码。本应用已在 AndroidManifest 中移除 INTERNET 与 ACCESS_NETWORK_STATE 权限，系统层面无法发起任何网络连接；RECORD_AUDIO 用于系统语音识别（不保存音频），USE_BIOMETRIC 用于应用锁。</p>
+      <div class="privacy-list">
+        <div><span>✓</span><div><b>无账号体系</b><small>不需要注册、登录，也不绑定手机号</small></div></div>
+        <div><span>✓</span><div><b>端侧识别</b><small>OCR 模型内置手机，报告图片不上传</small></div></div>
+        <div><span>✓</span><div><b>字段级加密</b><small>敏感字段经 Keystore 托管 AES-256-GCM 加密落盘</small></div></div>
+        <div><span>✓</span><div><b>应用锁</b><small>PIN 码 + 指纹 / 面容双重保护</small></div></div>
+      </div>
+      <p class="privacy-note">本站仅记录访问与下载统计（时间、页面、设备类型、脱敏展示的 IP），不接触、不收集任何健康数据。</p>
+      <a class="text-link" href="/privacy.html" style="display:inline-block;margin-top:16px;">查看完整隐私政策 <span>→</span></a>
+    </div>
+    <div class="privacy-visual" aria-hidden="true">
+      <svg viewBox="0 0 300 300" width="100%">
+        <circle cx="150" cy="150" r="126" fill="none" stroke="currentColor" stroke-opacity=".12" stroke-width="1.5" stroke-dasharray="5 7"/>
+        <circle cx="150" cy="150" r="96" fill="none" stroke="currentColor" stroke-opacity=".1" stroke-width="1.5"/>
+        <rect x="106" y="102" width="88" height="96" rx="16" fill="#0f766e" fill-opacity=".1" stroke="#0f766e" stroke-opacity=".5" stroke-width="2"/>
+        <path d="M126 102V88a24 24 0 0 1 48 0v14" fill="none" stroke="#0f766e" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="150" cy="142" r="9" fill="#0f766e"/><path d="M150 150v22" stroke="#0f766e" stroke-width="6" stroke-linecap="round"/>
+        <g fill="#0f766e" fill-opacity=".75" font-size="12" font-family="sans-serif">
+          <text x="20" y="76">本机 OCR</text><text x="222" y="88">无网络请求</text>
+          <text x="14" y="222">加密落盘</text><text x="216" y="238">应用锁</text>
+        </g>
+        <g fill="#0f766e" fill-opacity=".45"><circle cx="46" cy="140" r="4"/><circle cx="256" cy="150" r="4"/><circle cx="92" cy="252" r="4"/><circle cx="226" cy="52" r="4"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 下载 ==================== -->
+<section class="section section-alt" id="download">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">DOWNLOAD</div>
+      <h2>下载 V1.0.0 正式版</h2>
+      <p>Android 8.0（API 26）及以上 · 仅 arm64-v8a 64 位 ARM 设备 · 无需应用商店，下载后直接安装。</p>
+    </div>
+    <div class="dl-grid">
+      <article class="dl-card dl-main reveal">
+        <div class="dl-badge">推荐</div>
+        <div class="dl-head">
+          <img src="/assets/app-icon.png" alt="应用图标">
+          <div><h3>正式版 <span id="dlVersion">V1.0.0</span></h3><p>面向普通用户的对外发布版本</p></div>
+        </div>
+        <div class="dl-facts">
+          <div><span>文件名</span><b class="mono" id="dlFileR">YozerHealth-v1.0.0-release-arm64.apk</b></div>
+          <div><span>文件大小</span><b id="dlSizeR">—</b></div>
+          <div><span>versionCode</span><b id="dlCode">23</b></div>
+          <div><span>构建时间</span><b id="dlTimeR">—</b></div>
+        </div>
+        <div class="dl-sha"><span>SHA-256</span><code id="dlShaR">读取中…</code><button type="button" class="copy-btn" data-copy="dlShaR" title="复制校验值">复制</button></div>
+        <a class="btn btn-primary btn-block" href="/download/release" data-dl>下载正式版 APK</a>
+        <p class="dl-tip">使用独立 release 签名，与 V2.9.3 release 同签名，可直接覆盖该版本。</p>
+      </article>
+
+      <article class="dl-card reveal">
+        <div class="dl-head">
+          <img class="dl-ico-debug" src="/assets/logo-mark.png" alt="调试版">
+          <div><h3>调试版</h3><p>供开发调试使用，体积更大</p></div>
+        </div>
+        <div class="dl-facts">
+          <div><span>文件名</span><b class="mono" id="dlFileD">YozerHealth-v1.0.0-debug-arm64.apk</b></div>
+          <div><span>文件大小</span><b id="dlSizeD">—</b></div>
+          <div><span>签名</span><b>debug key</b></div>
+          <div><span>构建时间</span><b id="dlTimeD">—</b></div>
+        </div>
+        <div class="dl-sha"><span>SHA-256</span><code id="dlShaD">读取中…</code><button type="button" class="copy-btn" data-copy="dlShaD" title="复制校验值">复制</button></div>
+        <a class="btn btn-outline btn-block" href="/download/debug" data-dl>下载调试版 APK</a>
+        <p class="dl-tip">与正式版签名不同，两者无法互相覆盖安装；不建议日常使用。</p>
+      </article>
+    </div>
+
+    <p class="dl-qr">📱 <a href="/qrcode.html">扫码下载</a> · 用手机相机扫描二维码，直接获取安装包</p>
+
+    <div class="notice-box reveal">
+      <h3>安装前请留意</h3>
+      <div class="notice-grid">
+        <div><b>允许未知来源</b><p>首次侧载安装时，系统可能提示允许「安装未知应用」，按引导开启即可。</p></div>
+        <div><b>旧版本升级</b><p>可覆盖安装 V2.9.3 release；V2.9.2 及更早版本签名不同，需先卸载再安装。升级前建议先导出备份。</p></div>
+        <div><b>数据不外传</b><p>应用本身不联网；本页面仅统计下载次数与访问来源，不会读取设备内的任何健康记录。</p></div>
+        <div><b>校验完整性</b><p>下载完成后可用上方 SHA-256 校验文件；导出、导入与分享等功能需在应用内激活后使用。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 适合谁 / 结尾 CTA ==================== -->
+<section class="section wrap">
+  <div class="cta-card reveal">
+    <div>
+      <div class="kicker">WHO IT'S FOR</div>
+      <h2>一部手机，装下一家人的健康档案</h2>
+      <p>适合长期监测血压血糖的慢病人群、每年体检或跨院就诊的人、帮父母整理报告陪诊的家属，以及不愿把病历交给云服务的任何人。</p>
+      <a class="btn btn-primary btn-lg" href="/download/release" data-dl>免费下载 V1.0.0</a>
+    </div>
+    <div class="cta-tags"><span>报告不丢</span><span>病史说得清</span><span>数据不出手机</span></div>
+  </div>
+</section>
+</main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <div class="brand">
+        <img class="brand-mark" src="/assets/logo-mark.png" alt="">
+        <span class="brand-text"><b>悦泽健康</b><small>YozerHealth</small></span>
+      </div>
+      <p>把散落在纸质单、相册和各家医院 App 里的健康记录，收进一部手机；看得到趋势，讲得清病史，数据一步不出手机。</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速导航</h4><a href="/index.html">首页</a><a href="#features">功能介绍</a><a href="#trend">趋势与指标</a><a href="/privacy.html">隐私政策</a><a href="#download">下载安装</a>
+    </div>
+    <div class="footer-col">
+      <h4>问题反馈</h4>
+      <span>问题反馈微信：YozerHealth</span>
+      <span>问题反馈邮箱：YozerHealth@163.com</span>
+      <span>当前版本：V1.0.0（versionCode 23）</span>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 悦泽健康 YozerHealth</span>
+    <span class="disclaimer">仅供就诊参考，不作为诊断依据</span>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

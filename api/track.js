@@ -46,22 +46,23 @@ module.exports = async function (req, res) {
     return res.end(JSON.stringify({ ok: true, dedup: true, cloud: false }));
   }
 
-  let cloudOk = false;
+  // 先返回响应，云写入放到后台异步进行（带超时保护）。
+  // 统计是增强项，绝不能因云慢/不可达而阻塞页面或埋点响应本身。
   const store = getCloud();
+  res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+  res.end(JSON.stringify({ ok: true, cloud: !!store }));
+
   if (store) {
-    try {
-      await store.appendEvent(buildEvent(req, {
+    Promise.race([
+      store.appendEvent(buildEvent(req, {
         type,
         vid: body.vid || '',
         page: body.page || '',
         referrer: body.referrer || ''
-      }));
-      cloudOk = true;
-    } catch (err) {
+      })),
+      new Promise(function (_, rej) { setTimeout(function () { rej(new Error('cloud-write-timeout')); }, 1500); })
+    ]).catch(function (err) {
       console.error('[cloud] 事件写入失败：' + (err && (err.cloudCode || err.message)));
-    }
+    });
   }
-
-  res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
-  res.end(JSON.stringify({ ok: true, cloud: cloudOk }));
 };

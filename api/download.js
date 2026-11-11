@@ -24,25 +24,27 @@ module.exports = async function (req, res) {
     return res.end('Not found');
   }
 
+  // 先 302 重定向（下载本身绝不能被云写入拖慢），云写入后台异步进行（带超时保护）。
   const store = getCloud();
-  if (store) {
-    const cookies = req.headers.cookie || '';
-    const m = cookies.match(/(?:^|;\s*)yh_vid=([^;]+)/);
-    try {
-      await store.appendEvent(buildEvent(req, {
-        type: 'download',
-        variant,
-        vid: m ? m[1] : '',
-        page: '/download'
-      }));
-    } catch (err) {
-      console.error('[cloud] 下载事件写入失败：' + (err && (err.cloudCode || err.message)));
-    }
-  }
-
   res.writeHead(302, {
     'Location': '/apks/' + encodeURIComponent(v.file),
     'Cache-Control': 'no-store'
   });
   res.end();
+
+  if (store) {
+    const cookies = req.headers.cookie || '';
+    const m = cookies.match(/(?:^|;\s*)yh_vid=([^;]+)/);
+    Promise.race([
+      store.appendEvent(buildEvent(req, {
+        type: 'download',
+        variant,
+        vid: m ? m[1] : '',
+        page: '/download'
+      })),
+      new Promise(function (_, rej) { setTimeout(function () { rej(new Error('cloud-write-timeout')); }, 1500); })
+    ]).catch(function (err) {
+      console.error('[cloud] 下载事件写入失败：' + (err && (err.cloudCode || err.message)));
+    });
+  }
 };

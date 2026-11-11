@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="悦泽心理绘本 YozerMentalBook —— 面向 3–12 岁儿童的心理学故事绘本 App，12 辑 120 册中英双语绘本，横屏沉浸、真人配音、离线可用。Android 下载 V1.2.0。">
+<meta name="theme-color" content="#ef7a6b">
+<title>悦泽心理绘本 YozerMentalBook · 把心理学讲成孩子听得懂的故事</title>
+<link rel="icon" type="image/png" href="/assets/app-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/i18n-dict.js"></script>
+<script src="/assets/i18n.js"></script>
+</head>
+<body>
+
+<!-- ==================== 顶部导航 ==================== -->
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/index.html" aria-label="返回 Yozer 首页">
+      <img class="brand-mark" src="/assets/logo-mark.png" alt="">
+      <span class="brand-text"><b>悦泽心理绘本</b><small>YozerMentalBook</small></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/index.html">首页</a>
+      <a href="#overview">概览</a>
+      <a href="#features">功能</a>
+      <a href="#library">内容库</a>
+      <a href="#catalog">故事目录</a>
+      <a href="#download">下载</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" title="切换深浅主题" aria-label="切换深浅主题">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+      <button class="lang-switch" type="button" data-yh-lang-toggle aria-label="Switch to English">EN</button>
+      <a class="btn btn-primary btn-sm" href="#download" data-dl>下载 App</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ==================== Hero ==================== -->
+<section class="hero wrap">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> V1.2.0 现已发布 · Android</div>
+    <h1>用 120 个故事，<br><span class="hl">陪孩子长大</span></h1>
+    <p class="lead">
+      《悦泽心理绘本》是一套面向 3–12 岁儿童的心理学故事绘本 App。12 个主题辑、共 120 册中英双语绘本，
+      把情绪管理、社交能力、自我认知等心理学知识点，化作孩子听得懂、看得进的睡前故事。
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="https://github.com/YozerHealth/YozerHealthWeb/releases/download/V1.2.0/YozerMentalBook-v1.2.0.apk" target="_blank" rel="noopener" data-dl>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>
+        下载 V1.2.0
+      </a>
+      <a class="btn btn-ghost btn-lg" href="#features">先看看功能</a>
+    </div>
+    <div class="hero-meta">
+      <span>Android 8.0+</span><i></i>
+      <span>arm64-v8a</span><i></i>
+      <span>离线可用</span><i></i>
+      <span>资源加密</span>
+    </div>
+    <div class="hero-tags">
+      <span>中英双语</span><span>横屏沉浸</span><span>真人配音</span><span>离线可用</span>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-label="应用界面示意图">
+    <div class="glow" style="background:radial-gradient(420px 300px at 50% 35%, rgba(239,122,107,.28), transparent 70%)"></div>
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen" style="--accent:#ef7a6b">
+        <div class="ph-top"><span class="ph-title">今日故事</span><span class="ph-avatar">🧒</span></div>
+        <div class="ph-member">第 12 天 · 情绪小探险</div>
+        <div class="ph-card" style="background:color-mix(in srgb,#ef7a6b 10%,var(--card));border-color:color-mix(in srgb,#ef7a6b 30%,var(--line))">
+          <div class="ph-card-h"><b>今天的故事</b><span>约 4 分钟</span></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:6px 2px;">
+            <div style="width:52px;height:60px;border-radius:10px;background:linear-gradient(135deg,#ef7a6b,#f6a98f);display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;">📖</div>
+            <div style="font-size:13px;line-height:1.6;color:var(--ink2)">《小云朵为什么生气》<br><small>认识「生气」这种情绪</small></div>
+          </div>
+        </div>
+        <div class="ph-card">
+          <div class="ph-card-h"><b>情绪卡片</b><span>今天 +1</span></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;padding:4px 0;">
+            <span style="font-size:12px;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,#ef7a6b 14%,transparent);color:#d9533f">😊 开心</span>
+            <span style="font-size:12px;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,#ef7a6b 14%,transparent);color:#d9533f">😠 生气</span>
+            <span style="font-size:12px;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,#ef7a6b 14%,transparent);color:#d9533f">😨 害怕</span>
+          </div>
+        </div>
+        <div class="ph-card ph-row"><b>亲子小任务</b><span>今晚一起做 ✓</span></div>
+        <div class="ph-nav"><span class="on">故事</span><span>情绪</span><span>成长</span><span>我的</span></div>
+      </div>
+    </div>
+    <div class="float-card fc-a" style="--accent:#ef7a6b"><span class="fc-ico">✓</span><div><b>适龄内容</b><small>经儿童心理视角筛选</small></div></div>
+    <div class="float-card fc-b" style="--accent:#ef7a6b"><span class="fc-ico">▤</span><div><b>亲子共读</b><small>每篇附互动小任务</small></div></div>
+    <p class="visual-note">界面为功能示意图，非真机截图</p>
+  </div>
+</section>
+
+<!-- ==================== 信任条 ==================== -->
+<section class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-item"><b>120</b><span>册中英双语绘本</span></div>
+    <div class="trust-item"><b>12</b><span>个主题辑</span></div>
+    <div class="trust-item"><b>横屏</b><span>沉浸式阅读</span></div>
+    <div class="trust-item"><b>离线</b><span>内置绘本与配音</span></div>
+  </div>
+</section>
+
+<!-- ==================== 应用概览 ==================== -->
+<section class="section wrap" id="overview">
+  <div class="sec-head">
+    <div class="kicker">OVERVIEW</div>
+    <h2>应用概览</h2>
+    <p>《悦泽心理绘本》是一款为 3–12 岁儿童及其家长设计的绘本阅读应用。每一册绘本由独立故事组成，故事围绕儿童成长中常见的心理议题展开，让孩子在听故事的过程中学会认识情绪、理解他人、调节自己。</p>
+  </div>
+  <div class="overview-meta">
+    <div class="om"><b>应用名称</b><span>悦泽心理绘本</span></div>
+    <div class="om"><b>英文名称</b><span>YozerMentalBook</span></div>
+    <div class="om"><b>包名</b><code>com.yozermental.app</code></div>
+    <div class="om"><b>当前版本</b><span>v1.2.0</span></div>
+    <div class="om"><b>支持语言</b><span>中文、英文（法文即将上线）</span></div>
+    <div class="om"><b>运行方向</b><span>全程锁定横屏</span></div>
+  </div>
+  <div class="note-box" style="margin-top:18px;">
+    <p>本应用内容由「悦泽心理（Yozer）」出品；所有绘本与配音均已内置，无需联网即可完整阅读。</p>
+  </div>
+</section>
+
+<!-- ==================== 核心功能 ==================== -->
+<section class="section section-alt" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FUNCTIONS</div>
+      <h2>核心功能</h2>
+      <p>围绕「读得进、听得清、带得走、不外传」设计的完整阅读链路，全部内容都可离线使用。</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+        <h3>分类书架</h3>
+        <p>顶部「中文 / English / Français」标签切换，法文分类为「即将上线」占位，中文、英文各含 12 辑绘本。</p>
+        <span class="f-tag">中英双语 · 法文占位</span>
+      </article>
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></div>
+        <h3>左右翻页阅读</h3>
+        <p>左右滑动或点击翻页按钮即可翻看每一页，翻页流畅、支持连续浏览。</p>
+        <span class="f-tag">手势翻页 · 连续浏览</span>
+      </article>
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 9a3 3 0 0 1 0 6"/></svg></div>
+        <h3>逐页文字配音</h3>
+        <p>每页配有真人语音朗读，可单页播放，也支持「自动朗读」连续播完全册；无音频时自动回退系统 TTS 朗读文字稿。</p>
+        <span class="f-tag">真人配音 · 自动朗读</span>
+      </article>
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v10H4z"/><path d="M8 11h8M8 14h5"/></svg></div>
+        <h3>文字 / 配音切换</h3>
+        <p>阅读页底部可一键「显示 / 隐藏文字」，满足纯听、纯看或边听边读的不同需求。</p>
+        <span class="f-tag">显示隐藏 · 指读跟读</span>
+      </article>
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M14 9h4M14 13h3M14 16h2"/></svg></div>
+        <h3>满版绘本页</h3>
+        <p>每页为 595×419 横版高清绘本图，打开书籍时后台解包渲染，加载过程有进度条提示，不卡顿。</p>
+        <span class="f-tag">横版高清 · 进度提示</span>
+      </article>
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 15v2"/></svg></div>
+        <h3>资源加密打包</h3>
+        <p>全部页图、配音、封面、文字稿按书打包成压缩加密的 .pak 资源包，避免明文散落，也更省安装包体积。</p>
+        <span class="f-tag">加密 .pak · 省体积</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 内容库一览 ==================== -->
+<section class="section wrap" id="library">
+  <div class="sec-head">
+    <div class="kicker">LIBRARY</div>
+    <h2>内容库一览</h2>
+    <p>应用内置 24 册绘本（中文 12 辑 + 英文 12 辑），每辑 10 个互不重复的故事，全库共 240 个故事、1512 页。</p>
+  </div>
+  <div class="table-scroll">
+  <table class="lib-table">
+    <thead><tr><th>语言</th><th>辑数</th><th>每辑故事</th><th>页数 / 册</th><th>总页数</th></tr></thead>
+    <tbody>
+      <tr><td>中文</td><td>12 辑</td><td>10</td><td>63</td><td>756</td></tr>
+      <tr><td>English</td><td>12 volumes</td><td>10</td><td>63</td><td>756</td></tr>
+      <tr><td>Français</td><td colspan="4" class="muted">即将上线（占位分类）</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note-box" style="margin-top:16px;">
+    <p>每个故事都对应一项儿童心理发展主题：情绪认知、同伴交往、挫折应对、自我肯定、亲子依恋等，家长可在「故事目录」中快速定位想讲给孩子听的主题。</p>
+  </div>
+</section>
+
+<!-- ==================== 阅读体验 ==================== -->
+<section class="section section-alt" id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">READING</div>
+      <h2>阅读体验</h2>
+    </div>
+    <ul class="exp-list">
+      <li><b>横屏沉浸</b>：应用默认锁定横屏，绘本页以满版左右铺陈，最大化利用屏幕空间。</li>
+      <li><b>翻页方式</b>：左右滑动手势翻页，或使用底部「‹ 上一页」「下一页 ›」按钮精确控制。</li>
+      <li><b>配音控制</b>：底部「▶ 配音」播放当前页语音；「自动朗读：开 / 关」可切换连续播放模式。</li>
+      <li><b>文字面板</b>：底部「显示文字 / 隐藏文字」即时切换文字浮层，方便指读与跟读。</li>
+      <li><b>加载友好</b>：打开一本绘本时，资源包在后台解包，界面显示加载进度条；解包完成即渲染首页并开始朗读，翻页时复用已缓存资源，切换瞬时完成。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== 十二辑故事目录 ==================== -->
+<section class="section wrap" id="catalog">
+  <div class="sec-head">
+    <div class="kicker">CATALOG</div>
+    <h2>十二辑故事目录</h2>
+    <p>全 12 辑、120 个故事的一句话主题如下；每个故事都对应一项儿童心理发展主题，家长可快速定位想讲给孩子听的内容。</p>
+  </div>
+  <div class="catalog">
+
+    <div class="cat-vol">
+      <h3>第一辑 · 看见彼此</h3>
+      <p class="cat-theme">本辑主题：学业压力 · 屏幕成瘾 · 校园霸凌 · 同胞竞争 · 亲子控制</p>
+      <ul class="cat-stories">
+        <li>故事1 · 作业战争</li><li>故事2 · 手机争夺战</li><li>故事3 · 沉默的旁观者</li><li>故事4 · 二宝来了</li><li>故事5 · 乖孩子的崩塌</li><li>故事6 · 报班迷局</li><li>故事7 · 爸爸妈妈在手机里</li><li>故事8 · 没人选我</li><li>故事9 · 身体的秘密</li><li>故事10 · 不想上学了</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第二辑 · 看见彼此</h3>
+      <p class="cat-theme">本辑主题：儿童说谎 · 抗挫力 · 分离焦虑 · 社交孤立 · 性别刻板</p>
+      <ul class="cat-stories">
+        <li>故事1 · 偷拿的糖果</li><li>故事2 · 输不起</li><li>故事3 · 不肯松手的手</li><li>故事4 · 小拳头</li><li>故事5 · 总是说“好”的孩子</li><li>故事6 · 不开口的嘴巴</li><li>故事7 · 永远是第二名</li><li>故事8 · 万一呢</li><li>故事9 · 冷战的屋子</li><li>故事10 · 不许哭</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第三辑 · 看见彼此</h3>
+      <p class="cat-theme">本辑主题：夜恐惧 · 环境适应 · 物质攀比 · 情绪暴怒 · 容貌焦虑</p>
+      <ul class="cat-stories">
+        <li>故事1 · 怕黑的被窝</li><li>故事2 · 搬了新家</li><li>故事3 · 比不过的鞋子</li><li>故事4 · 被冤枉的委屈</li><li>故事5 · 不敢交朋友的墙</li><li>故事6 · 偷看的日记</li><li>故事7 · 爱发脾气的火山</li><li>故事8 · 尿床的小秘密</li><li>故事9 · 镜子里的不完美</li><li>故事10 · 咬指甲的女孩</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第四辑 · 看见彼此</h3>
+      <p class="cat-theme">本辑主题：挑食 · 入睡拖延 · 财商启蒙 · 拖延 · 社会比较</p>
+      <ul class="cat-stories">
+        <li>故事1 · 饭桌上的拉锯战</li><li>故事2 · 睡前两小时</li><li>故事3 · 乱糟糟的房间</li><li>故事4 · 压岁钱的去向</li><li>故事5 · 等一下再做</li><li>故事6 · 家务分工表</li><li>故事7 · 亲戚们的问候</li><li>故事8 · 说好的事又变了</li><li>故事9 · 早晨的起床气</li><li>故事10 · 说不出口的对不起</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第五辑 · 看见彼此</h3>
+      <p class="cat-theme">本辑主题：发言恐惧 · 竞选失败 · 物权边界 · 隐性霸凌 · 同伴排斥</p>
+      <ul class="cat-stories">
+        <li>故事1 · 举起又放下</li><li>故事2 · 落选的班长</li><li>故事3 · 借不借的橡皮</li><li>故事4 · 奇怪的外号</li><li>故事5 · 换了新同桌</li><li>故事6 · 游戏里的充值</li><li>故事7 · 一个人吃饭</li><li>故事8 · 不想去的运动会</li><li>故事9 · 朋友的忙</li><li>故事10 · 被叫家长的下午</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第六辑 · 看见彼此</h3>
+      <p class="cat-theme">本辑主题：注意特点 · 口吃 · 强迫倾向 · 死亡教育 · 习得性无助</p>
+      <ul class="cat-stories">
+        <li>故事1 · 坐不住的小板凳</li><li>故事2 · 结巴的一分钟</li><li>故事3 · 洗了一遍又一遍</li><li>故事4 · 去了兔星的雪球</li><li>故事5 · “我就是学不会”</li><li>故事6 · 群里没人理我</li><li>故事7 · 课间的“小报告”</li><li>故事8 · 书包里的纸条</li><li>故事9 · 台上的哑巴</li><li>故事10 · 缺席的生日</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第七辑 · 听见心里话</h3>
+      <p class="cat-theme">本辑主题：月经初潮 · 非自杀性自伤 · 医疗恐惧 · 神经多样性 · 父母离婚</p>
+      <ul class="cat-stories">
+        <li>故事1 · 口袋里的卫生巾</li><li>故事2 · 手臂上的小伤疤</li><li>故事3 · 针头小妖怪</li><li>故事4 · 同桌的奖牌</li><li>故事5 · 阳台上的含羞草</li><li>故事6 · 来自星星的同桌</li><li>故事7 · 两个家的周末</li><li>故事8 · 一个人的傍晚</li><li>故事9 · 假期最后一天</li><li>故事10 · 嘴里的“烂梗”</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第八辑 · 走进人群</h3>
+      <p class="cat-theme">本辑主题：寄宿适应 · 隔代溺爱 · 亲职化 · 学业诚信 · 读写困难</p>
+      <ul class="cat-stories">
+        <li>故事1 · 熄灯以后</li><li>故事2 · 奶奶的糖</li><li>故事3 · 大人的药</li><li>故事4 · 说好的秘密</li><li>故事5 · 抄来的满分</li><li>故事6 · 这么努力干嘛</li><li>故事7 · 写反的字</li><li>故事8 · 发光的偶像</li><li>故事9 · 海报上的三个名字</li><li>故事10 · 第一笔钱</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第九辑 · 当生活突然转弯</h3>
+      <p class="cat-theme">本辑主题：祖辈衰老 · 家庭经济变故 · 换牙 · 食物过敏 · 宠物离世</p>
+      <ul class="cat-stories">
+        <li>故事1 · 爷爷忘了回家的路</li><li>故事2 · 抽屉里的信</li><li>故事3 · 牙齿放在了枕头下</li><li>故事4 · 妈妈肚子里的客人</li><li>故事5 · 只有我不能吃</li><li>故事6 · 土豆去了哪里</li><li>故事7 · 奶奶说要是男孩</li><li>故事8 · 新老师的规矩</li><li>故事9 · 阁楼上的最后一晚</li><li>故事10 · 我赢了，他哭了</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第十辑 · 长大一点点</h3>
+      <p class="cat-theme">本辑主题：发育节奏 · 毕业离别 · 数字反哺 · 独立出行 · 心理求助污名</p>
+      <ul class="cat-stories">
+        <li>故事1 · 量身高</li><li>故事2 · 同学录</li><li>故事3 · 爷爷的小老师</li><li>故事4 · 幼稚</li><li>故事5 · 四十九路</li><li>故事6 · 五块钱</li><li>故事7 · 叫人</li><li>故事8 · 搜索记录</li><li>故事9 · 心语室</li><li>故事10 · 墙那边</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第十一辑 · 心事微澜</h3>
+      <p class="cat-theme">本辑主题：网络安全 · 考前焦虑 · 公开比较 · 宠物哀伤 · 游戏成瘾</p>
+      <ul class="cat-stories">
+        <li>故事1 · 屏幕那头的“朋友”</li><li>故事2 · 睡不着的考试夜</li><li>故事3 · 当众的缺点</li><li>故事4 · 走丢的橘猫</li><li>故事5 · 想当网红</li><li>故事6 · 妈妈的“别人家孩子”</li><li>故事7 · 第一次住校</li><li>故事8 · 老师的红人</li><li>故事9 · 戒掉的那个月</li><li>故事10 · 转学的夏天</li>
+      </ul>
+    </div>
+
+    <div class="cat-vol">
+      <h3>第十二辑 · 拔节之声</h3>
+      <p class="cat-theme">本辑主题：网络霸凌 · 身材焦虑 · 青春期发育 · AI 依赖 · 完美主义</p>
+      <ul class="cat-stories">
+        <li>故事1 · 群里的截图</li><li>故事2 · 秤上的数字</li><li>故事3 · 纸条上的名字</li><li>故事4 · 作业交给AI</li><li>故事5 · 贴在墙上的分数</li><li>故事6 · 爸爸的电话</li><li>故事7 · 那次摔倒以后</li><li>故事8 · 误触的打赏</li><li>故事9 · 不能错的一笔</li><li>故事10 · 会变声的喉咙</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== 下载 ==================== -->
+<section class="section section-alt" id="download">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">DOWNLOAD</div>
+      <h2>下载 V1.2.0</h2>
+      <p>Android 8.0（API 26）及以上 · 仅 arm64-v8a 64 位 ARM 设备 · 安装包托管于 GitHub Releases，点击前往官方发布页下载。</p>
+    </div>
+    <div class="dl-grid">
+      <article class="dl-card dl-main reveal">
+        <div class="dl-badge">官方发布</div>
+        <div class="dl-head">
+          <img src="/assets/app-icon.png" alt="应用图标">
+          <div><h3>正式版 <span>V1.2.0</span></h3><p>面向家长与孩子的对外发布版本</p></div>
+        </div>
+        <div class="dl-facts">
+          <div><span>文件名</span><b class="mono">YozerMentalBook-v1.2.0.apk</b></div>
+          <div><span>文件大小</span><b>以 GitHub 发布页为准</b></div>
+          <div><span>版本</span><b>V1.2.0</b></div>
+          <div><span>托管</span><b>GitHub Releases</b></div>
+        </div>
+        <a class="btn btn-primary btn-block" href="https://github.com/YozerHealth/YozerHealthWeb/releases/download/V1.2.0/YozerMentalBook-v1.2.0.apk" target="_blank" rel="noopener" data-dl>前往 GitHub 下载 APK</a>
+        <p class="dl-tip">安装包由 Yozer 官方发布于 GitHub；下载前请确认地址为 github.com/YozerHealth，谨防仿冒渠道。</p>
+      </article>
+    </div>
+
+    <div class="notice-box reveal">
+      <h3>安装前请留意</h3>
+      <div class="notice-grid">
+        <div><b>允许未知来源</b><p>首次侧载安装时，系统可能提示允许「安装未知应用」，按引导开启即可。</p></div>
+        <div><b>认准官方渠道</b><p>请仅从 github.com/YozerHealth 官方发布页获取安装包；其他来源的同类文件请谨慎。</p></div>
+        <div><b>适配设备</b><p>适用于 Android 8.0 及以上、arm64-v8a 架构的手机与平板。</p></div>
+        <div><b>离线使用</b><p>应用本身不依赖网络；本页面仅作介绍与下载引导，不收集任何儿童数据。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 结尾 CTA ==================== -->
+<section class="section wrap">
+  <div class="cta-card reveal" style="--accent:#ef7a6b">
+    <div>
+      <div class="kicker">FOR FAMILIES</div>
+      <h2>一部手机，装下 120 个成长故事</h2>
+      <p>适合想陪孩子认识情绪、理解行为的家长，关注儿童心理启蒙的家庭，以及希望用温柔方式开启亲子对话的任何人。</p>
+      <a class="btn btn-primary btn-lg" href="https://github.com/YozerHealth/YozerHealthWeb/releases/download/V1.2.0/YozerMentalBook-v1.2.0.apk" target="_blank" rel="noopener" data-dl>免费下载 V1.2.0</a>
+    </div>
+    <div class="cta-tags"><span>故事温暖</span><span>主题清晰</span><span>数据不出手机</span></div>
+  </div>
+</section>
+</main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <div class="brand">
+        <img class="brand-mark" src="/assets/logo-mark.png" alt="">
+        <span class="brand-text"><b>悦泽心理绘本</b><small>YozerMentalBook</small></span>
+      </div>
+      <p>用温暖的故事，陪孩子认识情绪、理解自己；看得到成长，留得下安心，数据一步不出手机。</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速导航</h4><a href="/index.html">首页</a><a href="#overview">应用概览</a><a href="#features">核心功能</a><a href="#library">内容库</a><a href="#catalog">故事目录</a><a href="#download">下载安装</a>
+    </div>
+    <div class="footer-col">
+      <h4>问题反馈</h4>
+      <span>问题反馈微信：YozerHealth</span>
+      <span>问题反馈邮箱：YozerHealth@163.com</span>
+      <span>当前版本：V1.2.0</span>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Yozer 悦泽科技</span>
+    <span class="disclaimer">本应用仅作儿童心理启蒙辅助，不替代专业心理咨询</span>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
