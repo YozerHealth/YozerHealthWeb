@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="悦泽心情急救 YozerMentalAID —— 无需注册、不联网、不留记录的青少年情绪急救工具。打开即用的呼吸锚，10 秒内开始生效。">
+<meta name="theme-color" content="#0F6E56">
+<title>悦泽心情急救 YozerMentalAID · 难受的那几十秒，打开就够了</title>
+<link rel="icon" type="image/png" href="/assets/app-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/i18n-dict.js"></script>
+<script src="/assets/i18n-dict-mentalaid.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  /* 呼吸锚动画（仅本页） */
+  .breath-wrap { display:flex; align-items:center; justify-content:center; flex:1; width:100%; position:relative; }
+  .breath-circle {
+    width:170px; height:170px; border-radius:50%;
+    background:radial-gradient(circle at 36% 30%, #178E6C 0%, #0F6E56 72%);
+    border:2px solid #5DCAA5;
+    box-shadow:0 0 60px rgba(93,202,165,.25), inset 0 0 40px rgba(93,202,165,.12);
+    animation: yh-breathe 10s ease-in-out infinite;
+    display:flex; align-items:center; justify-content:center;
+  }
+  @keyframes yh-breathe { 0%{transform:scale(.55)} 40%{transform:scale(1)} 100%{transform:scale(.55)} }
+  .breath-word { position:relative; font-size:22px; font-weight:700; color:#EAFFF7; text-align:center; }
+  .breath-word .in { animation: yh-ph-in 10s linear infinite; }
+  .breath-word .out { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); white-space:nowrap; opacity:0; animation: yh-ph-out 10s linear infinite; }
+  @keyframes yh-ph-in { 0%,38%{opacity:1} 40%,100%{opacity:0} }
+  @keyframes yh-ph-out { 0%,38%{opacity:0} 40%,100%{opacity:1} }
+  .ma-phone-note { font-size:11px; color:var(--ink2); }
+</style>
+</head>
+<body>
+
+<!-- ==================== 顶部导航 ==================== -->
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/index.html" aria-label="返回 Yozer 首页">
+      <img class="brand-mark" src="/assets/logo-mark.png" alt="">
+      <span class="brand-text"><b>悦泽心情急救</b><small>YozerMentalAID</small></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/index.html">首页</a>
+      <a href="#why">出发点</a>
+      <a href="#start">快速开始</a>
+      <a href="#features">功能</a>
+      <a href="#games">小游戏</a>
+      <a href="#privacy">隐私</a>
+      <a href="#about">关于</a>
+      <a href="#download">下载</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" title="切换深浅主题" aria-label="切换深浅主题">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+      <button class="lang-switch" type="button" data-yh-lang-toggle aria-label="Switch to English">EN</button>
+      <a class="btn btn-primary btn-sm" href="#download" data-dl>下载 App</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ==================== Hero ==================== -->
+<section class="hero wrap">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> 无需注册 · 无需联网 · 不留任何记录</div>
+    <h1>悦泽心情急救</h1>
+    <p class="lead">
+      难受的那几十秒，打开就够了。不用点、不用选、不用解释。一个给青少年的情绪急救工具：没有账号，没有引导页，也没有任何东西会被传出去。打开的第一秒，已经有一个呼吸在等你跟着。
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="/apks/YozerMentalAID-v1.1.3-release.apk" data-dl>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>
+        下载安装包 · 约 53 KB
+      </a>
+      <a class="btn btn-ghost btn-lg" href="#start">先看看怎么用</a>
+    </div>
+    <div class="hero-meta">
+      <span>Android 8.0+</span><i></i>
+      <span>单文件离线</span><i></i>
+      <span>无账号</span><i></i>
+      <span>仅 VIBRATE 权限</span>
+    </div>
+    <div class="hero-tags">
+      <span>10 秒生效</span><span>不联网</span><span>不留痕</span><span>一键隐身</span>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-label="首屏呼吸锚示意">
+    <div class="glow" style="background:radial-gradient(420px 300px at 50% 35%, rgba(15,110,86,.28), transparent 70%)"></div>
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen" style="--accent:#5DCAA5; flex-direction:column;">
+        <div class="ph-top" style="width:100%"><span class="ph-title">悦泽心情急救</span><span class="ph-avatar">🫧</span></div>
+        <div class="breath-wrap">
+          <div class="breath-circle"><span class="breath-word"><span class="in">吸</span><span class="out">呼 ——</span></span></div>
+        </div>
+        <div class="ma-phone-note">上滑 · 更多工具</div>
+      </div>
+    </div>
+    <div class="float-card fc-a" style="--accent:#5DCAA5"><span class="fc-ico">⏱</span><div><b>10 秒</b><small>点开到第一个完整呼吸</small></div></div>
+    <div class="float-card fc-b" style="--accent:#5DCAA5"><span class="fc-ico">🚫</span><div><b>0 项联网</b><small>系统层面无法联网</small></div></div>
+    <p class="visual-note">界面为功能示意图，非真机截图</p>
+  </div>
+</section>
+
+<!-- ==================== 信任条 ==================== -->
+<section class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-item"><b>10<span style="font-size:14px">秒</span></b><span>点开到第一个完整呼吸</span></div>
+    <div class="trust-item"><b>0</b><span>联网权限</span></div>
+    <div class="trust-item"><b>520</b><span>中性短句</span></div>
+    <div class="trust-item"><b>53<span style="font-size:14px">KB</span></b><span>安装包体积</span></div>
+  </div>
+</section>
+
+<!-- ==================== 应用概览 ==================== -->
+<section class="section wrap" id="overview">
+  <div class="sec-head">
+    <div class="kicker">OVERVIEW</div>
+    <h2>应用概览</h2>
+    <p>《悦泽心情急救》是一款为青少年打造的离线情绪急救工具。它把「选择」全部拿掉：打开就是已经在起伏的呼吸圆，全程可以一次都不点；不注册、不联网、不留任何记录。</p>
+  </div>
+  <div class="overview-meta">
+    <div class="om"><b>应用名称</b><span>悦泽心情急救</span></div>
+    <div class="om"><b>英文名称</b><span>YozerMentalAID</span></div>
+    <div class="om"><b>包名</b><code>com.yozermentalaid.app</code></div>
+    <div class="om"><b>当前版本</b><span>v1.1.3</span></div>
+    <div class="om"><b>支持语言</b><span>中文、英文</span></div>
+    <div class="om"><b>运行方向</b><span>竖屏</span></div>
+  </div>
+  <div class="note-box" style="margin-top:18px;">
+    <p>本应用内容由「悦泽心理（Yozer）」出品；所有文字与练习随安装包内置，断网也能用，不会因内容更新而失效。</p>
+  </div>
+</section>
+
+<!-- ==================== 设计出发点 ==================== -->
+<section class="section section-alt" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">WHY</div>
+      <h2>它为什么长这样</h2>
+      <p>崩溃的时候读不进长句、做不了决定、手指也不太听使唤。所以这个应用把「选择」这件事全部拿掉了。</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>不用先做决定</h3><p>没有首页菜单，没有引导，没有权限弹窗。打开就是已经在起伏的圆，跟着就好，全程可以一次都不点。</p><span class="f-tag">首屏零交互</span></article>
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>不想被旁边的人看到</h3><p>一键切到空白时钟页，禁止截屏与最近任务缩略图，不发通知。对很多人来说，「别被看见」比「不联网」更贴身。</p><span class="f-tag">一键隐身</span></article>
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></div><h3>不想留下任何东西</h3><p>没有账号、没有情绪日记、没有打卡。自定义的句子、删掉的句子都只在内存里，退出进程就回到初始状态。</p><span class="f-tag">默认零落盘</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 快速开始 ==================== -->
+<section class="section wrap" id="start">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">QUICK START</div>
+      <h2>从点开到缓下来，中间没有步骤</h2>
+      <p>这里衡量的不是「功能多不多」，而是从点开图标到有一个干预真的在发生，要多久。</p>
+    </div>
+    <div class="timeline-grid reveal">
+      <div class="tl"><div class="t">0 秒</div><h3>点开图标</h3><p>没有启动画面、没有版本检查、没有要你同意的东西。</p></div>
+      <div class="tl"><div class="t">1 秒内</div><h3>圆开始起伏</h3><p>吸 4 秒、呼 6 秒，震动同步打节拍。屏幕上只有「吸 / 呼」两个字。</p></div>
+      <div class="tl"><div class="t">10 秒</div><h3>第一个完整周期</h3><p>一轮已经走完。可以继续跟着，什么都不用做。</p></div>
+      <div class="tl"><div class="t">之后</div><h3>想用再用</h3><p>上滑进工具箱；点右上「隐身」随时退出。没有必须完成的流程。</p></div>
+    </div>
+    <div class="steps-grid" style="margin-top:26px">
+      <div class="step-card reveal"><h3>三个手势，够用了</h3><p>上滑进入工具箱；点右上「隐身」、长按、双击或摇一摇，立刻切到空白时钟页；在空白时钟页点一下回到桌面，长按返回呼吸锚。</p></div>
+      <div class="step-card reveal"><h3>还可以放到桌面上</h3><p>长按应用图标有三个快捷方式：立刻呼吸、三次叹息、工具箱。也可以添加「呼吸一下」小组件，点一下直达呼吸锚，跳过所有中间页。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 功能 ==================== -->
+<section class="section section-alt" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FUNCTIONS</div>
+      <h2>按「当时还剩多少力气」来分</h2>
+      <p>越靠前的越不需要动脑。后面那些，等缓过来再看也不迟。</p>
+    </div>
+
+    <div class="group-block reveal">
+      <div class="group-head"><h3>打开就用</h3><span>零点击，不用读字</span></div>
+      <div class="feature-grid">
+        <article class="feature"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/></svg></div><h3>呼吸锚</h3><p>吸 4 秒、呼 6 秒的圆，打开即动，持续循环。纯手绘，不加载任何资源。</p><span class="f-tag">首屏</span></article>
+        <article class="feature"><h3>三次叹息</h3><p>吸 2 秒、再吸一点、长呼 6 秒，共 3 轮后自动回到常规呼吸，不弹提示、不打扰。</p><span class="f-tag">桌面快捷方式可直达</span></article>
+        <article class="feature"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="11" width="8" height="10" rx="1.5"/><path d="M9 11V8a3 3 0 0 1 6 0v3"/></svg></div><h3>震动节律</h3><p>马达跟着呼吸打拍子。黑屏、放在口袋里也能跟着，不一定要看屏幕。</p><span class="f-tag">唯一权限 VIBRATE</span></article>
+        <article class="feature"><h3>桌面直达</h3><p>三个长按快捷方式与一个「呼吸一下」小组件，都直接落到呼吸锚。</p><span class="f-tag">跳过所有中间页</span></article>
+      </div>
+    </div>
+
+    <div class="group-block reveal">
+      <div class="group-head"><h3>缓下来</h3><span>不读题、不打字、点大色块就行</span></div>
+      <div class="feature-grid">
+        <article class="feature"><h3>5-4-3-2-1 感官定位</h3><p>点按式，把注意力挪回身边能感知到的东西，不需要写任何字。</p></article>
+        <article class="feature"><h3>握拳 · 松开 · 冷刺激</h3><p>身体先动起来的节律提示，配合本地文字说明，全程离线。</p></article>
+        <article class="feature"><h3>程序化节律音</h3><p>代码实时生成的低通噪声，近似雨声。没有人声、没有音乐文件，默认关，开了也是慢慢渐入。</p><span class="f-tag">默认静音</span></article>
+        <article class="feature"><h3>危机出口</h3><p>本地写好的三步应对提示，加一个打开系统拨号盘的按钮。不自动拨出、不读取通话。</p></article>
+      </div>
+    </div>
+
+    <div class="group-block reveal">
+      <div class="group-head"><h3>平静之后</h3><span>可以慢慢看，也可以不用</span></div>
+      <div class="feature-grid">
+        <article class="feature"><h3>一句话 · 中性锚语</h3><p>520 条随机顺序的短句，一轮 520 句不重复。都是描述性的、允许性的话，没有说教，也不讲道理。</p><span class="f-tag">可删 · 可恢复 · 可自己写一句</span></article>
+        <article class="feature"><h3>离线急救卡</h3><p>写给「下一次又很难受」的自己。随安装包内置，断网也能看，不会因内容更新失效。</p></article>
+        <article class="feature"><h3>隐私自检</h3><p>现场显示权限清单、联网状态、本地文件数量，旁边就是一键抹除按钮。</p><span class="f-tag">自己就能核对</span></article>
+        <article class="feature"><h3>关于</h3><p>版本号、主要功能、反馈方式、隐私保护条款与免责说明，都写在应用里，离线可读。</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 小游戏 ==================== -->
+<section class="section wrap" id="games">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">GAMES</div>
+      <h2>五个小动作，都不需要你赢</h2>
+      <p>有倒计时和输赢的游戏会让人更紧绷。所以这里的规则是反过来的：只有过程，没有结果。</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg></div><h3>捏泡泡</h3><p>点一下，泡泡就没了。</p></article>
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="1.5"/><circle cx="12" cy="6" r="1.5"/><circle cx="18" cy="6" r="1.5"/><circle cx="6" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="18" cy="12" r="1.5"/></svg></div><h3>点点阵</h3><p>重复、均匀、没有目标。</p></article>
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 18 4M4 12l8-8M12 20l8-8"/></svg></div><h3>擦雾</h3><p>手指划过，雾面散开，不会提示「完成」。</p></article>
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg></div><h3>涟漪</h3><p>点一下散开一圈，慢慢淡掉，可以点很多下。</p></article>
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></div><h3>归位</h3><p>色块缓缓聚拢，再点一下慢慢散开。</p></article>
+    </div>
+    <div class="rule-row reveal">
+      <span>没有分数</span><span>没有失败</span><span>没有倒计时</span><span>没有结束</span><span>没有排行榜</span><span>不需要精确点击</span><span>默认不出声</span><span>随时可以退出</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 隐私 ==================== -->
+<section class="section section-alt" id="privacy">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">PRIVACY</div>
+      <h2>「不联网」不是一句承诺，是安装包里根本没有这个权限</h2>
+      <p>应用没有声明 INTERNET 权限，系统在底层就不会给它任何联网能力。不是「我们不会上传」，而是「它做不到」。</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature reveal"><h3>不用注册、不用登录</h3><p>不绑定手机号、邮箱或任何身份信息。</p></article>
+      <article class="feature reveal"><h3>唯一申请的权限是震动</h3><p>（VIBRATE），没有联网、电话、存储、位置权限。</p></article>
+      <article class="feature reveal"><h3>没有第三方 SDK</h3><p>广告、统计、埋点、崩溃上报，不收集设备标识。</p></article>
+      <article class="feature reveal"><h3>不记录使用行为</h3><p>不写情绪日记，也没有打卡与连续天数。</p></article>
+      <article class="feature reveal"><h3>默认不写任何本地数据</h3><p>自定义句、删除记录、洗牌顺序只在内存，退出进程即消失。</p></article>
+      <article class="feature reveal"><h3>关闭系统备份</h3><p>禁止截屏与最近任务缩略图，不发送通知。</p></article>
+      <article class="feature reveal"><h3>关于页只展示联系方式</h3><p>应用内不发消息、不写邮件、不上传、不记录是否复制。</p></article>
+      <article class="feature reveal"><h3>飞行模式下全部功能可用</h3><p>（系统拨号除外），内容全部随包内置。</p></article>
+    </div>
+
+    <div class="note-box reveal" style="margin-top:22px">
+      <h3 style="margin:0 0 10px;font-size:16px;color:var(--primary)">你可以自己核对，不用信文案</h3>
+      <p style="font-size:13.5px;color:var(--ink2)">打开应用 → 上滑 → 关于 → 隐私自检与一键抹除，现场就能看到权限清单、联网状态和本地文件数。本版本安装包静态核对结果：</p>
+      <div class="kv-grid">
+        <div><b>1 项</b><span>权限：仅 VIBRATE</span></div>
+        <div><b>0 项</b><span>联网权限（INTERNET 未声明）</span></div>
+        <div><b>0 个</b><span>第三方 SDK / so 库</span></div>
+        <div><b>~53 KB</b><span>安装包体积，无 WebView</span></div>
+      </div>
+      <div class="trade-box">
+        <p><b>也有一点取舍要说清楚。</b> 因为完全不联网，内容没法热更新（求助号码需要随版本人工核验）、没法统计哪句话对谁更有用、也做不了任何远程安全兜底。这些是「零上传」的代价，我们选择把它写在明处，而不是悄悄加回一个联网开关。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 安装 ==================== -->
+<section class="section wrap" id="install">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">INSTALL</div>
+      <h2>装完，就结束了</h2>
+      <p>没有初始化向导，没有要勾的同意框，也没有第一次打开时的教学页。</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal"><h3>确认设备</h3><p>Android 8.0（API 26）及以上，竖屏使用。安装包约 53 KB，不需要预留空间，也不需要联网。</p></div>
+      <div class="step-card reveal"><h3>安装 APK</h3><p>下载 YozerMentalAID-v1.1.3-release.apk，在系统提示时允许「安装未知来源应用」，然后安装。已装过 1.1.x 旧版的设备可以直接覆盖升级（同一签名）；如果之前装的是最早的 debug 测试包，需要先卸载再装。</p></div>
+      <div class="step-card reveal"><h3>第一次打开</h3><p>直接就是呼吸圆，已经在动。没有引导、没有权限弹窗、没有版本检查。不想跟也没关系，它不会催你。</p></div>
+      <div class="step-card reveal"><h3>把它放到顺手的地方</h3><p>长按桌面图标，把「立刻呼吸」拖出来；或添加「呼吸一下」小组件。下一次难受的时候，少一步是一步。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 关于与反馈 ==================== -->
+<section class="section section-alt" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">ABOUT</div>
+      <h2>哪里不好用，可以告诉做它的人</h2>
+      <p>应用里只展示联系方式，不提供反馈表单。是否联系、写什么，都在微信或邮件里由你自己完成——这样它才依然是一个不会往外发东西的应用。</p>
+    </div>
+    <div class="info-grid">
+      <div class="contact-card reveal"><div class="k">微信</div><div class="v" id="wechat">YozerHealth</div><button type="button" data-copy="wechat">复制</button></div>
+      <div class="contact-card reveal"><div class="k">邮箱</div><div class="v" id="email">YozerHealth@163.com</div><button type="button" data-copy="email">复制</button></div>
+    </div>
+    <div class="meta-row reveal">
+      <span>版本 <b>v1.1.3</b></span>
+      <span>英文名 <b>YozerMentalAID</b></span>
+      <span>包名 <b>com.yozermentalaid.app</b></span>
+      <span>文档对应版本日期 <b>2026-11-13</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 免责 ==================== -->
+<section class="section wrap" id="disclaimer">
+  <div class="wrap">
+    <div class="notice-box reveal" style="border-left-color:#d9533f">
+      <h3 style="color:#d9533f">请先看这一句</h3>
+      <p>本应用是自助稳定工具，不是医疗急救，也不提供诊断、治疗或危机干预服务，不宣称任何疗效。里面的方法只是常见的自我稳定练习，不替代专业帮助。</p>
+      <p>如果可能伤害自己，或感觉撑不住，请立刻联系身边可信的人、拨打当地急救电话，或寻求专业机构帮助——这个应用替代不了真人，也不该是唯一的求助方式。</p>
+      <p>另外如实说明：本版本的危机求助号码尚未核验，因此不预填任何号码。「我现在不安全」里的按钮只打开系统自带拨号盘，是否拨打、拨打给谁，完全由你决定。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 常见问题 ==================== -->
+<section class="section section-alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FAQ</div>
+      <h2>大概会想问的几件事</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary>会不会被家长或同学看到？</summary><div class="faq-a"><p>应用禁止截屏与最近任务缩略图，不发通知，也不出现在最近任务列表里。点右上「隐身」、长按、双击或摇一摇，会立刻切到一个只有时间的空白页；点一下回桌面，长按返回呼吸。</p></div></details>
+      <details class="faq-item reveal"><summary>真的不会偷偷联网上传吗？</summary><div class="faq-a"><p>安装包没有声明 INTERNET 权限，Android 系统在底层就不会允许它发起网络请求。也没有任何第三方 SDK、广告或统计组件。可以自行静态扫描 APK，或在应用内「隐私自检」页现场看权限清单。</p></div></details>
+      <details class="faq-item reveal"><summary>为什么没有账号、日记和打卡？</summary><div class="faq-a"><p>日记和打卡会在手机上留下痕迹，也会制造「断签」的压力，急性难受的时候更用不上。这个应用不记录你什么时候来过、做了什么、待了多久。</p></div></details>
+      <details class="faq-item reveal"><summary>卸载之后会留下东西吗？</summary><div class="faq-a"><p>默认不写任何本地文件：不建数据库、不写配置、不访问外部存储。自定义的句子、删掉的句子、随机顺序都只在内存里，退出进程就回到初始状态。「隐私自检」页也提供一键抹除。</p></div></details>
+      <details class="faq-item reveal"><summary>为什么没有治愈系音乐和经文？</summary><div class="faq-a"><p>人声和音乐在教室、宿舍容易外放暴露，也可能成为触发源。这里用的是代码实时生成的低通节律声，没有音频文件、默认静音。文字部分只有中性的描述性短句，不带任何宗教或立场内容。</p></div></details>
+      <details class="faq-item reveal"><summary>小游戏为什么没有分数和关卡？</summary><div class="faq-a"><p>倒计时、输赢和排行榜会让人更紧绷，和「缓下来」相反。所以五个小动作都没有分数、失败、结束，也不需要精确点击，随时可以退出。</p></div></details>
+      <details class="faq-item reveal"><summary>520 句话会重复吗？能自己写吗？</summary><div class="faq-a"><p>一轮 520 句随机出现且不重复，一轮走完自动重新洗牌。可以删掉不想看的、一键恢复，也可以自己写一句给下一次的自己。默认不自动轮播，需要的话可以在页面里打开「每 8 秒换句」。</p></div></details>
+      <details class="faq-item reveal"><summary>没有网也能用吗？求助号码呢？</summary><div class="faq-a"><p>除系统拨号外，全部功能在飞行模式下可用，所有文字与内容随安装包内置。危机号码未经核验，本版本留空、不预填，按钮只打开系统拨号盘；号码会在核实后随版本更新并标注核验日期。</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 下载 ==================== -->
+<section class="section wrap" id="download">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">DOWNLOAD</div>
+      <h2>下载 V1.1.3</h2>
+      <p>Android 8.0（API 26）及以上 · 单文件离线应用 · 安装包托管于本网站，点击即可下载。</p>
+    </div>
+    <div class="dl-grid">
+      <article class="dl-card dl-main reveal">
+        <div class="dl-badge">官方发布</div>
+        <div class="dl-head">
+          <img src="/assets/app-icon.png" alt="应用图标">
+          <div><h3>正式版 <span>V1.1.3</span></h3><p>面向公众的对外发布版本</p></div>
+        </div>
+        <div class="dl-facts">
+          <div><span>文件名</span><b class="mono">YozerMentalAID-v1.1.3-release.apk</b></div>
+          <div><span>文件大小</span><b>~53 KB</b></div>
+          <div><span>版本</span><b>V1.1.3</b></div>
+          <div><span>托管</span><b>本站静态资源</b></div>
+        </div>
+        <a class="btn btn-primary btn-block" href="/apks/YozerMentalAID-v1.1.3-release.apk" data-dl>下载 APK</a>
+        <p class="dl-tip">安装包由 Yozer 官方发布于本网站；下载前请确认地址为本站官方域名，谨防仿冒渠道。</p>
+      </article>
+    </div>
+
+    <div class="notice-box reveal">
+      <h3>安装前请留意</h3>
+      <div class="notice-grid">
+        <div><b>允许未知来源</b><p>首次侧载安装时，系统可能提示允许「安装未知应用」，按引导开启即可。</p></div>
+        <div><b>认准官方渠道</b><p>请仅从本站官方发布页获取安装包；其他来源的同类文件请谨慎。</p></div>
+        <div><b>适配设备</b><p>适用于 Android 8.0 及以上、arm64-v8a 架构的手机与平板。</p></div>
+        <div><b>离线使用</b><p>应用本身不依赖网络；本页面仅作介绍与下载引导，不收集任何数据。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 结尾 CTA ==================== -->
+<section class="section wrap">
+  <div class="cta-card reveal" style="--accent:#0F6E56">
+    <div>
+      <div class="kicker">FOR TEENS</div>
+      <h2>难受的那几十秒，打开就够了</h2>
+      <p>适合容易情绪突然上头、又不想被看见、也不想留下痕迹的青少年与自己。</p>
+      <a class="btn btn-primary btn-lg" href="/apks/YozerMentalAID-v1.1.3-release.apk" data-dl>免费下载 V1.1.3</a>
+    </div>
+    <div class="cta-tags"><span>数据不出手机</span><span>没人看见</span><span>随时退出</span></div>
+  </div>
+</section>
+</main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <div class="brand">
+        <img class="brand-mark" src="/assets/logo-mark.png" alt="">
+        <span class="brand-text"><b>悦泽心情急救</b><small>YozerMentalAID</small></span>
+      </div>
+      <p>一个不联网、不留痕、不催促的情绪急救工具；打开就有呼吸，关掉就回到初始。</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速导航</h4><a href="/index.html">首页</a><a href="#why">出发点</a><a href="#start">快速开始</a><a href="#features">功能</a><a href="#games">小游戏</a><a href="#privacy">隐私</a><a href="#download">下载安装</a>
+    </div>
+    <div class="footer-col">
+      <h4>Yozer 全家应用</h4><a href="/mentalbook.html">悦泽心理绘本</a><a href="/yozerhealth.html">悦泽健康</a><a href="/psychometric.html">悦泽量表</a>
+    </div>
+    <div class="footer-col">
+      <h4>问题反馈</h4>
+      <span>问题反馈微信：YozerHealth</span>
+      <span>问题反馈邮箱：YozerHealth@163.com</span>
+      <span>当前版本：V1.1.3</span>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Yozer 悦泽科技</span>
+    <span class="disclaimer">自助稳定工具，不提供诊断、治疗或危机干预服务</span>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

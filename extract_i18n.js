@@ -7,15 +7,21 @@ const dict = Object.assign({}, require(path.join(ROOT, 'public/assets/i18n-dict.
 // 补丁脚本仅把条目 Object.assign 进 window.YH_DICT（无 module.exports），
 // 因此在 Node 下先声明 global.window，加载后从 global.YH_DICT 取合并结果。
 global.window = global.window || global;
-try { require(path.join(ROOT, 'public/assets/i18n-dict-privacy.js')); Object.assign(dict, global.window.YH_DICT || {}); } catch (e) { /* 补丁可选 */ }
+// 各页专属补丁（生成后自动合并，使校验覆盖对应页面）。
+// 补丁脚本仅把条目 Object.assign 进 window.YH_DICT（无 module.exports），
+// 因此在 Node 下先声明 global.window，加载后从 global.YH_DICT 取合并结果。
+['i18n-dict-privacy.js', 'i18n-dict-psychometric.js', 'i18n-dict-mentalaid.js', 'i18n-dict-apps.js'].forEach(function (patch) {
+  try { require(path.join(ROOT, 'public/assets/' + patch)); Object.assign(dict, global.window.YH_DICT || {}); } catch (e) { /* 补丁可选 */ }
+});
 const ATTRS = ['placeholder', 'title', 'alt', 'aria-label', 'content', 'value'];
-const files = ['public/index.html', 'public/yozerhealth.html', 'public/mentalbook.html', 'public/privacy.html'];
+const files = ['public/index.html', 'public/yozerhealth.html', 'public/mentalbook.html', 'public/privacy.html', 'public/psychometric.html', 'public/mentalaid.html'];
 const norm = (s) => String(s).replace(/\s+/g, ' ').trim();
 const dictNorm = new Set(Object.keys(dict).map(norm));
 
 const texts = new Set();
 for (const f of files) {
-  let html = fs.readFileSync(path.join(ROOT, f), 'utf8');
+  let html;
+  try { html = fs.readFileSync(path.join(ROOT, f), 'utf8'); } catch (e) { continue; /* 页面尚未生成 */ }
   html = html.replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '');
   for (const a of ATTRS) {
     const re = new RegExp(a + '\\s*=\\s*("([^"]*)"|\'([^\']*)\')', 'gi');

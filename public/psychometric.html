@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="悦泽量表 YozerPsychoMetric —— 覆盖全年龄阶段的离线心理量表测评工具，无需注册、不联网、本地加密保存，支持多对象建档与一键 PDF 报告。">
+<meta name="theme-color" content="#6750A4">
+<title>悦泽量表 YozerPsychoMetric · 把心理测评安静地留在自己手机里</title>
+<link rel="icon" type="image/png" href="/assets/app-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/i18n-dict.js"></script>
+<script src="/assets/i18n-dict-psychometric.js"></script>
+<script src="/assets/i18n.js"></script>
+</head>
+<body>
+
+<!-- ==================== 顶部导航 ==================== -->
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/index.html" aria-label="返回 Yozer 首页">
+      <img class="brand-mark" src="/assets/logo-mark.png" alt="">
+      <span class="brand-text"><b>悦泽量表</b><small>YozerPsychoMetric</small></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/index.html">首页</a>
+      <a href="#overview">概览</a>
+      <a href="#features">功能</a>
+      <a href="#scales">量表库</a>
+      <a href="#report">报告</a>
+      <a href="#privacy">隐私</a>
+      <a href="#download">下载</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" title="切换深浅主题" aria-label="切换深浅主题">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+      <button class="lang-switch" type="button" data-yh-lang-toggle aria-label="Switch to English">EN</button>
+      <a class="btn btn-primary btn-sm" href="#download" data-dl>下载 App</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ==================== Hero ==================== -->
+<section class="hero wrap">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> V1.0.0 现已发布 · Android</div>
+    <h1>把心理测评，安静地留在自己手机里</h1>
+    <p class="lead">
+      《悦泽量表》是一款覆盖婴幼儿、学龄前、儿童、青少年、成人与老年全年龄阶段的心理量表测评工具。完全离线运行、本地加密保存、无需注册登录，支持多测评对象建档、结果历史与重测，并可一键导出 PDF 报告便于打印与就医沟通。
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="https://github.com/YozerHealth/YozerHealthWeb/releases/download/YozerPsychoMetric_V1.0.0/YozerPsychoMetric_V1.0.0.apk" target="_blank" rel="noopener" data-dl>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>
+        下载 V1.0.0
+      </a>
+      <a class="btn btn-ghost btn-lg" href="#features">先看看功能</a>
+    </div>
+    <div class="hero-meta">
+      <span>Android 7.0+</span><i></i>
+      <span>arm64-v8a</span><i></i>
+      <span>完全离线</span><i></i>
+      <span>本地加密</span>
+    </div>
+    <div class="hero-tags">
+      <span>完全离线</span><span>AES-256-GCM</span><span>无账号</span><span>多用户</span><span>PDF 报告</span>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-label="应用界面示意图">
+    <div class="glow" style="background:radial-gradient(420px 300px at 50% 35%, rgba(103,80,164,.28), transparent 70%)"></div>
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen" style="--accent:#6750A4">
+        <div class="ph-top"><span class="ph-title">PHQ-9</span><span class="ph-avatar">📋</span></div>
+        <div class="ph-member">近两周 · 第 3 / 9 题</div>
+        <div class="ph-card" style="background:color-mix(in srgb,#6750A4 10%,var(--card));border-color:color-mix(in srgb,#6750A4 30%,var(--line))">
+          <div class="ph-card-h"><b>做事时提不起劲或没有兴趣</b><span>0–3</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;padding:6px 2px;font-size:12px;color:var(--ink2)">
+            <span style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,#6750A4 14%,transparent);color:#4F378B">① 完全不会</span>
+            <span style="padding:7px 10px;border-radius:8px;background:var(--line)">② 好几天</span>
+            <span style="padding:7px 10px;border-radius:8px;background:var(--line)">③ 一半以上天数</span>
+            <span style="padding:7px 10px;border-radius:8px;background:var(--line)">④ 几乎每天</span>
+          </div>
+        </div>
+        <div class="ph-card ph-row"><b>作答进度</b><span>33%</span></div>
+        <div class="ph-nav"><span class="on">测评</span><span>结果</span><span>历史</span><span>我的</span></div>
+      </div>
+    </div>
+    <div class="float-card fc-a" style="--accent:#6750A4"><span class="fc-ico">✓</span><div><b>适龄覆盖</b><small>按年龄与分类快速定位</small></div></div>
+    <div class="float-card fc-b" style="--accent:#6750A4"><span class="fc-ico">🔒</span><div><b>本地加密</b><small>Keystore 托管 AES-256-GCM</small></div></div>
+    <p class="visual-note">界面为功能示意图，非真机截图</p>
+  </div>
+</section>
+
+<!-- ==================== 信任条 ==================== -->
+<section class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-item"><b>30</b><span>心理量表</span></div>
+    <div class="trust-item"><b>7</b><span>年龄阶段</span></div>
+    <div class="trust-item"><b>11</b><span>测评分类</span></div>
+    <div class="trust-item"><b>443</b><span>测评题目</span></div>
+    <div class="trust-item"><b>0</b><span>联网请求</span></div>
+  </div>
+</section>
+
+<!-- ==================== 应用概览 ==================== -->
+<section class="section wrap" id="overview">
+  <div class="sec-head">
+    <div class="kicker">OVERVIEW</div>
+    <h2>应用概览</h2>
+    <p>《悦泽量表》是一款为关注心理健康的人群设计的本地优先测评工具。内置题库随应用安装，打开即可使用，不依赖任何服务器；所有作答与结果均加密保存在本机。</p>
+  </div>
+  <div class="overview-meta">
+    <div class="om"><b>应用名称</b><span>悦泽量表</span></div>
+    <div class="om"><b>英文名称</b><span>YozerPsychoMetric</span></div>
+    <div class="om"><b>包名</b><code>com.yozerpsychometric.app</code></div>
+    <div class="om"><b>当前版本</b><span>v1.0.0</span></div>
+    <div class="om"><b>支持语言</b><span>中文、英文</span></div>
+    <div class="om"><b>运行方向</b><span>竖屏</span></div>
+  </div>
+  <div class="note-box" style="margin-top:18px;">
+    <p>本应用内容由「悦泽心理（Yozer）」出品；所有量表为公开科普内容，以只读数据库随应用内置，无需联网即可完整使用。</p>
+  </div>
+</section>
+
+<!-- ==================== 核心功能 ==================== -->
+<section class="section section-alt" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FUNCTIONS</div>
+      <h2>核心功能</h2>
+      <p>围绕「私密、方便、可持续记录」设计的完整测评链路，全部内容都可离线使用。</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <h3>全年龄阶段覆盖</h3>
+        <p>从 0–3 岁婴幼儿发育里程碑，到老年抑郁与认知筛查，按年龄阶段和测评分类两种维度快速找到合适量表。</p>
+        <span class="f-tag">婴幼儿到老年</span>
+      </article>
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>数据只属于本机</h3>
+        <p>应用不申请联网权限，所有用户信息、作答与结果均经 AES-256-GCM 加密保存在本机，主密钥由 Android Keystore 托管。</p>
+        <span class="f-tag">AES-256-GCM</span>
+      </article>
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-4 8-8 9-4-1-8-4-8-9V7z"/></svg></div>
+        <h3>密码与指纹双通道</h3>
+        <p>首次启动设置访问密码；支持的设备可开启指纹解锁。无需账号、无需手机号，也不收集任何身份信息。</p>
+        <span class="f-tag">无账号 · 无手机号</span>
+      </article>
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 1-3 3-3s3 1 3 3"/></svg></div>
+        <h3>多人分别建档</h3>
+        <p>家庭成员或机构可为不同测评对象分别建立档案，随时切换；每人的测评历史相互独立，互不混淆。</p>
+        <span class="f-tag">多用户切换</span>
+      </article>
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+        <h3>一键导出 PDF 报告</h3>
+        <p>结果页可生成排版完整、支持中文的 A4 报告，含总分、等级、分项、建议与作答明细，可直接分享或打印带给医生。</p>
+        <span class="f-tag">中文 A4 报告</span>
+      </article>
+      <article class="feature reveal">
+        <div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>历史留存与重测</h3>
+        <p>每次测评按时间顺序保留，可随时回看往期结果、对比变化，也可对同一量表重新测评或删除单条记录。</p>
+        <span class="f-tag">趋势对比</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 量表覆盖 ==================== -->
+<section class="section wrap" id="scales">
+  <div class="sec-head">
+    <div class="kicker">SCALE LIBRARY</div>
+    <h2>内置量表覆盖</h2>
+    <p>共 30 个量表、443 道题目、1481 个选项，分布于 11 个分类；下表与 App 内置题库实时一致。</p>
+  </div>
+  <div class="stages"><span class="stage">0-3岁 婴幼儿<em>4 个量表</em></span><span class="stage">3-6岁 学龄前<em>4 个量表</em></span><span class="stage">6-12岁 儿童<em>14 个量表</em></span><span class="stage">12-18岁 青少年<em>23 个量表</em></span><span class="stage">18-64岁 成人<em>14 个量表</em></span><span class="stage">65岁+ 老年<em>3 个量表</em></span><span class="stage">全年龄<em>1 个量表</em></span></div>
+        <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">🌧️</span><h3>情绪·抑郁</h3><span class="cat-count">4 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">患者健康问卷-9（PHQ-9）</td><td>12岁以上（青少年/成人）</td><td>自评</td><td class="num">9</td><td class="num">27</td></tr>
+            <tr><td class="name">儿童抑郁量表（简版 CDI-10）</td><td>7-17岁 儿童/青少年</td><td>自评</td><td class="num">10</td><td class="num">20</td></tr>
+            <tr><td class="name">老年抑郁量表（GDS-15）</td><td>65岁以上（或≥60岁）</td><td>自评</td><td class="num">15</td><td class="num">15</td></tr>
+            <tr><td class="name">抑郁自评量表（SDS 科普版）</td><td>青少年/成人</td><td>自评</td><td class="num">20</td><td class="num">80</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">🌪️</span><h3>情绪·焦虑</h3><span class="cat-count">4 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">广泛性焦虑量表-7（GAD-7）</td><td>12岁以上</td><td>自评</td><td class="num">7</td><td class="num">21</td></tr>
+            <tr><td class="name">儿童焦虑性情绪障碍筛查表（SCARED）</td><td>5-19岁（儿童/青少年）</td><td>自评或家长</td><td class="num">41</td><td class="num">82</td></tr>
+            <tr><td class="name">焦虑自评量表（SAS 科普版）</td><td>青少年/成人</td><td>自评</td><td class="num">20</td><td class="num">80</td></tr>
+            <tr><td class="name">多维焦虑量表（简版 MASC-10）</td><td>儿童/青少年</td><td>自评</td><td class="num">10</td><td class="num">30</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">🎯</span><h3>行为·注意缺陷多动</h3><span class="cat-count">3 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">长处与困难问卷（SDQ）</td><td>4-16岁</td><td>家长/教师/自评</td><td class="num">25</td><td class="num">40</td></tr>
+            <tr><td class="name">Conners 简明行为量表（10项）</td><td>3-17岁（家长/教师评）</td><td>家长/教师</td><td class="num">10</td><td class="num">30</td></tr>
+            <tr><td class="name">SNAP-IV 评定量表（18项）</td><td>6-17岁（家长/教师评）</td><td>家长/教师</td><td class="num">18</td><td class="num">54</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">🧭</span><h3>综合筛查</h3><span class="cat-count">3 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">中小学生心理健康测验（MHT 节选版）</td><td>中小学生</td><td>自评</td><td class="num">20</td><td class="num">20</td></tr>
+            <tr><td class="name">症状自评量表（SCL-90 维度节选）</td><td>青少年/成人</td><td>自评</td><td class="num">20</td><td class="num">60</td></tr>
+            <tr><td class="name">中国中学生心理健康量表（简版）</td><td>中学生</td><td>自评</td><td class="num">20</td><td class="num">80</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">🌱</span><h3>发育与认知</h3><span class="cat-count">2 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">0-6岁发育里程碑筛查</td><td>0-6岁（家长评）</td><td>家长</td><td class="num">12</td><td class="num">12</td></tr>
+            <tr><td class="name">简易精神状态检查（MMSE 科普展示版）</td><td>主要用于老年认知筛查</td><td>他评（专业人员）</td><td class="num">11</td><td class="num">30</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">🧩</span><h3>孤独症谱系</h3><span class="cat-count">3 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">婴幼儿孤独症筛查（M-CHAT-R/F）</td><td>16-30月龄</td><td>家长</td><td class="num">20</td><td class="num">20</td></tr>
+            <tr><td class="name">儿童孤独症评定量表（CARS 专业他评版）</td><td>2岁以上</td><td>他评（专业人员）</td><td class="num">15</td><td class="num">60</td></tr>
+            <tr><td class="name">孤独症行为量表（ABC 节选版）</td><td>2-15岁（家长/教师）</td><td>家长/教师</td><td class="num">12</td><td class="num">30</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">🛡️</span><h3>创伤与强迫</h3><span class="cat-count">3 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">儿童创伤后应激筛查（CPSS 科普简版）</td><td>儿童/青少年</td><td>自评或家长</td><td class="num">12</td><td class="num">24</td></tr>
+            <tr><td class="name">强迫症状筛查（简版）</td><td>青少年/成人</td><td>自评</td><td class="num">10</td><td class="num">20</td></tr>
+            <tr><td class="name">童年创伤问卷（简版 CTQ-10）</td><td>回顾童年期（青少年/成人）</td><td>自评</td><td class="num">10</td><td class="num">30</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">🎭</span><h3>人格与气质</h3><span class="cat-count">2 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">艾森克人格问卷（简版 EPQ）</td><td>青少年/成人</td><td>自评</td><td class="num">24</td><td class="num">24</td></tr>
+            <tr><td class="name">儿童气质问卷（简版）</td><td>3-12岁（家长评）</td><td>家长</td><td class="num">15</td><td class="num">30</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">😴</span><h3>睡眠与压力</h3><span class="cat-count">3 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">匹兹堡睡眠质量（节选版）</td><td>青少年/成人</td><td>自评</td><td class="num">10</td><td class="num">30</td></tr>
+            <tr><td class="name">知觉压力量表（PSS-14）</td><td>青少年/成人</td><td>自评</td><td class="num">14</td><td class="num">56</td></tr>
+            <tr><td class="name">失眠严重程度指数（ISI）</td><td>全年龄段</td><td>自评</td><td class="num">7</td><td class="num">28</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">📱</span><h3>网络与行为依赖</h3><span class="cat-count">2 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">青少年网络使用问题风险（科普简版）</td><td>儿童/青少年</td><td>自评或家长</td><td class="num">10</td><td class="num">20</td></tr>
+            <tr><td class="name">手机依赖自评（简版）</td><td>青少年/成人</td><td>自评</td><td class="num">8</td><td class="num">16</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="cat-block">
+        <div class="cat-head-row"><span class="cat-emoji">🆘</span><h3>危机筛查（安全）</h3><span class="cat-count">1 个量表</span></div>
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>量表名称</th><th>适用年龄</th><th>评定方式</th><th>题量</th><th>满分</th></tr></thead>
+          <tbody>
+            <tr><td class="name">心理危机快速筛查（安全优先）</td><td>全年龄</td><td>自评或家长</td><td class="num">8</td><td class="num">8</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+  <div class="note-box" style="margin-top:16px;">
+    <p>注：部分长量表为简版、节选或科普改编版，题量与计分已简化，其得分不能与标准版直接比较，也不可套用标准版临界值或常模。MMSE、CARS 等需由受训专业人员施测。</p>
+  </div>
+</section>
+
+<!-- ==================== 测评报告 ==================== -->
+<section class="section section-alt" id="report">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">REPORT</div>
+      <h2>测评结果里有什么</h2>
+      <p>结果用于自我觉察与就医沟通参考，措辞经过非诊断化处理。</p>
+    </div>
+    <div class="note-box">
+      <ul class="checks">
+        <li>总分与所处等级区间</li>
+        <li>分项 / 维度得分（如有）</li>
+        <li>针对该等级的初步建议</li>
+        <li>逐题作答明细，便于复核</li>
+        <li>量表来源与适用对象说明</li>
+        <li>非诊断免责声明与求助渠道</li>
+      </ul>
+      <p style="margin:16px 0 0;font-size:13.5px;color:var(--muted)">
+        特别地，涉及自伤 / 自杀意念的关键题目设有独立安全提示：只要该题作答阳性，无论总分高低，结果页与 PDF 报告都会显示心理援助热线与求助建议。当前内置 7 条关键题目预警规则。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 隐私与安全 ==================== -->
+<section class="section wrap" id="privacy">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">PRIVACY</div>
+      <h2>隐私与安全</h2>
+      <p>「不联网」不是设置选项，而是应用的设计前提。</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5 12h14M12 5c3 3 3 11 0 14M12 5c-3 3-3 11 0 14"/></svg></div><h3>零网络权限</h3><p>AndroidManifest 中未声明任何网络权限，应用不与任何服务器通信，也不含第三方统计或广告 SDK。</p></article>
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div><h3>本地强加密</h3><p>测评数据以 AES-256-GCM 加密后写入本机文件；主密钥存放于设备安全芯片（Android Keystore），不可导出。</p></article>
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v10H4z"/><path d="M8 11h8M8 14h5"/></svg></div><h3>题库与记录隔离</h3><p>内置量表为公开科普内容，以只读数据库存放，不含任何个人信息，与您的测评记录相互隔离。</p></article>
+      <article class="feature reveal"><div class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg></div><h3>数据由您掌控</h3><p>可通过导出功能把报告带离本机；卸载应用或清除数据后，本地记录不可恢复，开发方也无法找回。</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 重要提示 ==================== -->
+<section class="section section-alt" id="notice">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">IMPORTANT</div>
+      <h2>使用前请务必了解</h2>
+    </div>
+    <div class="notice-box reveal">
+      <h3>⚠️ 本应用不是诊断工具</h3>
+      <ol>
+        <li>所有量表及解释仅用于心理健康科普与自我 / 他评筛查，不构成医疗建议、诊断或治疗方案，不能替代精神科医生或临床心理学家的专业评估。</li>
+        <li>多数长量表采用简版、节选或科普改编，题量、选项与计分已经简化，得分不能与标准版直接比较，也不可套用标准版临界值、常模或临床分界值。</li>
+        <li>MMSE、CARS 等量表需由受训专业人员按标准指导语施测，普通用户自行作答的结果无效，不能用于判断认知功能或是否患有孤独症。</li>
+        <li>筛查结果（含「阴性 / 正常」）均不能排除风险。若出现持续情绪低落、自伤或自杀念头、严重行为异常或现实感异常，请立即联系专业机构。</li>
+        <li>热线号码以当地官方最新公布为准；开发方不对依据本应用结果做出的任何决定负责。</li>
+      </ol>
+      <div class="hotline">全国 24 小时心理援助热线 12356 · 青少年服务热线 12355 · 有紧迫危险时请就近急诊或拨打 110 / 120</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 常见问题 ==================== -->
+<section class="section wrap" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FAQ</div>
+      <h2>常见问题</h2>
+      <p>以下为使用悦泽量表时最常遇到的问题。</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary>需要联网、注册或登录吗？</summary><div class="faq-a"><p>都不需要。应用完全离线运行，不申请联网权限，不要求账号注册或登录，也不收集任何个人身份信息。</p></div></details>
+      <details class="faq-item reveal"><summary>忘记访问密码怎么办？</summary><div class="faq-a"><p>密码以本地加盐哈希方式校验，开发方不掌握、也无法远程重置。若已开启指纹解锁，可先用指纹进入，再到「设置」中修改密码；若未开启指纹，则无法找回，只能清除应用数据后重新设置 —— 注意这会导致本机历史记录不可恢复。建议安装后立即开启指纹。</p></div></details>
+      <details class="faq-item reveal"><summary>换手机或卸载后，测评记录还在吗？</summary><div class="faq-a"><p>不在。测评记录仅加密保存在本机，目前版本不提供跨设备迁移或账号同步。重要结果请提前用「导出 PDF 报告」保存。</p></div></details>
+      <details class="faq-item reveal"><summary>结果能作为诊断依据吗？</summary><div class="faq-a"><p>都不能。本应用的结果仅供初步参考，不构成诊断。简版 / 改编量表的得分不可与标准版直接比较，也不可套用标准版临界值或常模。</p></div></details>
+      <details class="faq-item reveal"><summary>支持哪些安卓设备？</summary><div class="faq-a"><p>Android 7.0（API 24）及以上；安装包约 65 MB。应用无后台服务、无广告、无推送。</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 安装要求 ==================== -->
+<section class="section section-alt" id="install">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">INSTALL</div>
+      <h2>安装与系统要求</h2>
+    </div>
+    <div class="note-box">
+      <ul class="checks">
+        <li>系统：Android 7.0（API 24）或更高</li>
+        <li>安装包：约 65 MB（已含中文字体与离线题库）</li>
+        <li>应用名称：悦泽量表 / YozerPsychoMetric</li>
+        <li>包名：com.yozerpsychometric.app</li>
+        <li>版本：V1.0.0（versionCode 1）</li>
+        <li>权限：无网络权限；指纹功能使用系统生物识别</li>
+      </ul>
+      <p style="margin:16px 0 0;font-size:13.5px;color:var(--muted)">
+        安装方式：将 APK 文件复制到手机，允许「未知来源」后点击安装；或使用 adb install 安装。升级安装需使用同一签名密钥的版本。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 下载 ==================== -->
+<section class="section wrap" id="download">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">DOWNLOAD</div>
+      <h2>下载 V1.0.0</h2>
+      <p>Android 7.0（API 24）及以上 · 仅 arm64-v8a 64 位 ARM 设备 · 安装包托管于 GitHub Releases，点击前往官方发布页下载。</p>
+    </div>
+    <div class="dl-grid">
+      <article class="dl-card dl-main reveal">
+        <div class="dl-badge">官方发布</div>
+        <div class="dl-head">
+          <img src="/assets/app-icon.png" alt="应用图标">
+          <div><h3>正式版 <span>V1.0.0</span></h3><p>面向公众的对外发布版本</p></div>
+        </div>
+        <div class="dl-facts">
+          <div><span>文件名</span><b class="mono">YozerPsychoMetric_V1.0.0.apk</b></div>
+          <div><span>文件大小</span><b>~65 MB</b></div>
+          <div><span>版本</span><b>V1.0.0</b></div>
+          <div><span>托管</span><b>GitHub Releases</b></div>
+        </div>
+        <a class="btn btn-primary btn-block" href="https://github.com/YozerHealth/YozerHealthWeb/releases/download/YozerPsychoMetric_V1.0.0/YozerPsychoMetric_V1.0.0.apk" target="_blank" rel="noopener" data-dl>前往 GitHub 下载 APK</a>
+        <p class="dl-tip">安装包由 Yozer 官方发布于 GitHub；下载前请确认地址为 github.com/YozerHealth，谨防仿冒渠道。</p>
+      </article>
+    </div>
+
+    <div class="notice-box reveal">
+      <h3>安装前请留意</h3>
+      <div class="notice-grid">
+        <div><b>允许未知来源</b><p>首次侧载安装时，系统可能提示允许「安装未知应用」，按引导开启即可。</p></div>
+        <div><b>认准官方渠道</b><p>请仅从 github.com/YozerHealth 官方发布页获取安装包；其他来源的同类文件请谨慎。</p></div>
+        <div><b>适配设备</b><p>适用于 Android 7.0 及以上、arm64-v8a 架构的手机与平板。</p></div>
+        <div><b>离线使用</b><p>应用本身不依赖网络；本页面仅作介绍与下载引导，不收集任何数据。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 结尾 CTA ==================== -->
+<section class="section wrap">
+  <div class="cta-card reveal" style="--accent:#6750A4">
+    <div>
+      <div class="kicker">FOR FAMILIES</div>
+      <h2>一部手机，装下 30 套心理量表</h2>
+      <p>适合关注自身或家人心理健康的成年人、需要按年龄筛查的家长与机构，以及希望用私密方式做自我觉察的任何人。</p>
+      <a class="btn btn-primary btn-lg" href="https://github.com/YozerHealth/YozerHealthWeb/releases/download/YozerPsychoMetric_V1.0.0/YozerPsychoMetric_V1.0.0.apk" target="_blank" rel="noopener" data-dl>免费下载 V1.0.0</a>
+    </div>
+    <div class="cta-tags"><span>数据不出手机</span><span>主题清晰</span><span>就医可带</span></div>
+  </div>
+</section>
+</main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <div class="brand">
+        <img class="brand-mark" src="/assets/logo-mark.png" alt="">
+        <span class="brand-text"><b>悦泽量表</b><small>YozerPsychoMetric</small></span>
+      </div>
+      <p>把心理测评，安静地留在自己手机里；看得到变化，留得下安心，数据一步不出设备。</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速导航</h4><a href="/index.html">首页</a><a href="#overview">应用概览</a><a href="#features">核心功能</a><a href="#scales">量表库</a><a href="#report">测评报告</a><a href="#download">下载安装</a>
+    </div>
+    <div class="footer-col">
+      <h4>Yozer 全家应用</h4><a href="/mentalbook.html">悦泽心理绘本</a><a href="/yozerhealth.html">悦泽健康</a><a href="/mentalaid.html">悦泽心情急救</a>
+    </div>
+    <div class="footer-col">
+      <h4>问题反馈</h4>
+      <span>问题反馈微信：YozerHealth</span>
+      <span>问题反馈邮箱：YozerHealth@163.com</span>
+      <span>当前版本：V1.0.0</span>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Yozer 悦泽科技</span>
+    <span class="disclaimer">本应用仅作心理健康科普与筛查参考，不替代专业评估</span>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
