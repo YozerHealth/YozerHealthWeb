@@ -7,10 +7,11 @@
 <meta name="theme-color" content="#B45309">
 <title>育儿手册《陪孩子长大》· 3—12 岁育儿实操电子书</title>
 <link rel="icon" type="image/png" href="/assets/app-icon.png">
+<link rel="preload" as="image" href="/assets/parenting/parenting-cover.webp" type="image/webp">
 <link rel="stylesheet" href="/assets/site.css">
-<script src="/assets/i18n-dict.js"></script>
-<script src="/assets/i18n-dict-parenting.js"></script>
-<script src="/assets/i18n.js"></script>
+<script defer src="/assets/i18n-dict.js"></script>
+<script defer src="/assets/i18n-dict-parenting.js"></script>
+<script defer src="/assets/i18n.js"></script>
 <style>
   .trust-inner.five { grid-template-columns: repeat(5, 1fr); }
   .part-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
@@ -39,6 +40,7 @@
   .book-cover { position:relative; width:300px; max-width:76%; border-radius:5px 14px 14px 5px; border:1px solid var(--line); background:#fff; transform:rotate(-3deg); box-shadow:0 28px 60px rgba(0,0,0,.26), inset -8px 0 16px rgba(0,0,0,.06); }
   .book-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
   .book-figure { margin:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow-sm); text-align:center; }
+  .book-stage picture, .book-figure picture { display:block; }
   .book-figure img { width:100%; max-height:520px; object-fit:contain; object-position:top; border:1px solid var(--line); background:#fff; border-radius:8px; }
   .book-figure figcaption { margin-top:12px; font-size:13px; color:var(--ink2); }
   .who-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; }
@@ -101,7 +103,7 @@
     <div class="glow" style="background:radial-gradient(420px 300px at 50% 35%, rgba(180,83,9,.22), transparent 70%)"></div>
     <div class="book-stage">
       <div class="book-shadow"></div>
-      <img class="book-cover" src="/assets/parenting/parenting-cover.png" alt="《陪孩子长大》封面">
+      <picture><source srcset="/assets/parenting/parenting-cover.webp" type="image/webp"><img class="book-cover" src="/assets/parenting/parenting-cover.png" alt="《陪孩子长大》封面" width="720" height="982" decoding="async"></picture>
       <div class="float-card fc-a" style="--accent:#b45309"><span class="fc-ico">48</span><div><b>48 章问题详解</b><small>3—12 岁</small></div></div>
       <div class="float-card fc-b" style="--accent:#b45309"><span class="fc-ico">7</span><div><b>7 大主题板块</b><small>问题导向</small></div></div>
     </div>
@@ -394,10 +396,10 @@
       <p>真实排版预览 · A5 竖版 · 黑白简笔画插图 · 楷体实例情景框</p>
     </div>
     <div class="book-gallery">
-      <figure class="book-figure"><img src="/assets/parenting/parenting-cover.png" alt="封面设计"><figcaption>封面设计</figcaption></figure>
-      <figure class="book-figure"><img src="/assets/parenting/parenting-toc.png" alt="目录 · 带章节编号与页码"><figcaption>目录 · 带章节编号与页码</figcaption></figure>
-      <figure class="book-figure"><img src="/assets/parenting/parenting-page.png" alt="章节首页 · 插图与正文"><figcaption>章节首页 · 插图与正文</figcaption></figure>
-      <figure class="book-figure"><img src="/assets/parenting/parenting-sample.png" alt="第一章插图"><figcaption>第一章插图</figcaption></figure>
+      <figure class="book-figure"><picture><source srcset="/assets/parenting/parenting-cover.webp" type="image/webp"><img src="/assets/parenting/parenting-cover.png" alt="封面设计" width="720" height="982" loading="lazy" decoding="async"></picture><figcaption>封面设计</figcaption></figure>
+      <figure class="book-figure"><picture><source srcset="/assets/parenting/parenting-toc.webp" type="image/webp"><img src="/assets/parenting/parenting-toc.png" alt="目录 · 带章节编号与页码" width="720" height="982" loading="lazy" decoding="async"></picture><figcaption>目录 · 带章节编号与页码</figcaption></figure>
+      <figure class="book-figure"><picture><source srcset="/assets/parenting/parenting-page.webp" type="image/webp"><img src="/assets/parenting/parenting-page.png" alt="章节首页 · 插图与正文" width="720" height="982" loading="lazy" decoding="async"></picture><figcaption>章节首页 · 插图与正文</figcaption></figure>
+      <figure class="book-figure"><picture><source srcset="/assets/parenting/parenting-sample.webp" type="image/webp"><img src="/assets/parenting/parenting-sample.png" alt="第一章插图" width="720" height="586" loading="lazy" decoding="async"></picture><figcaption>第一章插图</figcaption></figure>
     </div>
     <p class="visual-note">图片为文档内嵌样张，仅作版式展示</p>
   </div>
