@@ -691,7 +691,55 @@ img { max-width: 100%; height: auto; }
 @media (max-width:760px){ .timeline-grid{ grid-template-columns:repeat(2,1fr);} .timeline-grid .tl:nth-child(2){border-right:none;} .timeline-grid .tl:nth-child(-n+2){border-bottom:1px solid var(--line);} }
 @media (max-width:480px){ .timeline-grid{ grid-template-columns:1fr;} .timeline-grid .tl{border-right:none;border-bottom:1px solid var(--line);} .timeline-grid .tl:last-child{border-bottom:none;} }
 
-/* ==================== 五入口枢纽布局（新增育儿手册） ==================== */
+/* ==================== 入口枢纽布局（App 区 / 电子书区） ==================== */
 .hub-grid.five { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 1080px) { .hub-grid.five { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 820px) { .hub-grid.five { grid-template-columns: 1fr; max-width: 460px; } }
+
+/* 首页双区分组：App 入口 + 电子书入口 */
+.hub.hub-groups { justify-content: flex-start; }
+.hub-groups .hub-hero { margin-bottom: 40px; }
+.hub-section { width: 100%; max-width: var(--wrap); margin: 0 auto 40px; }
+.hub-section-head {
+  display: flex; align-items: center; gap: 14px; margin: 0 0 20px;
+  padding: 0 2px 12px; border-bottom: 1px solid var(--line);
+}
+.hub-section-head .sec-mark {
+  width: 40px; height: 40px; border-radius: 12px; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--sec-accent, var(--primary)) 13%, transparent);
+  color: var(--sec-accent, var(--primary));
+}
+.hub-section-head h2 { font-size: 21px; margin: 0; color: var(--ink); letter-spacing: -.2px; }
+.hub-section-head p { font-size: 13.5px; color: var(--ink3); margin: 2px 0 0; }
+.hub-section-head .sec-count {
+  margin-left: auto; font-size: 12.5px; font-weight: 700; color: var(--sec-accent, var(--primary));
+  background: color-mix(in srgb, var(--sec-accent, var(--primary)) 12%, transparent);
+  border-radius: 999px; padding: 4px 12px; flex: none;
+}
+.hub-grid.apps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.hub-grid.books { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1180px) {
+  .hub-grid.apps, .hub-grid.books { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .hub-grid.apps, .hub-grid.books { grid-template-columns: 1fr; max-width: 460px; }
+  .hub-section-head h2 { font-size: 18px; }
+  .hub-section-head p { font-size: 12.5px; }
+  .hub-section-head .sec-count { display: none; }
+}
+
+/* ==================== 电子书完整版申请（4 个电子书详情页） ==================== */
+.apply-card { max-width: 900px; margin: 0 auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-sm); text-align: center; }
+.apply-card > p { color: var(--ink2); line-height: 1.85; margin: 0 0 24px; }
+.apply-contacts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.apply-contact { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 22px 14px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; }
+.apply-k { font-size: 13px; letter-spacing: .1em; color: var(--ink3); }
+.apply-v { font-size: 19px; font-weight: 700; color: var(--ink); word-break: break-all; text-decoration: none; }
+a.apply-v:hover { color: var(--primary); text-decoration: underline; }
+.apply-card .apply-note { margin: 22px 0 0; font-size: 13px; color: var(--ink3); }
+@media (max-width: 640px) {
+  .apply-card { padding: 24px 18px; }
+  .apply-contacts { grid-template-columns: 1fr; }
+  .apply-v { font-size: 17px; }
+}

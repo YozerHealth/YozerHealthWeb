@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="生命最初的三年——悦泽心理会员专用电子书。12 章、49 条实操建议、约 3.6 万字，覆盖 0—3 岁科学养育，含前言、完整目录与第 1 章试读。">
+<meta name="theme-color" content="#0e7490">
+<title>生命最初的三年 · 0—3 岁科学养育指南</title>
+<link rel="icon" type="image/png" href="/assets/app-icon.png">
+<link rel="preload" as="image" href="/assets/ebooks/years-cover.webp" type="image/webp">
+<link rel="stylesheet" href="/assets/site.css">
+<script defer src="/assets/i18n-dict.js"></script>
+<script defer src="/assets/i18n-dict-years.js"></script>
+<script defer src="/assets/i18n.js"></script>
+<style>
+  .trust-inner.five { grid-template-columns: repeat(5, 1fr); }
+  .part-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
+  .part-grid .feature { padding:22px 20px; position:relative; }
+  .part-no { font-size:11px; letter-spacing:.16em; color:var(--primary); font-weight:800; margin-bottom:8px; }
+  .part-count { display:inline-block; font-size:11.5px; color:var(--primary); background:var(--soft-2); border-radius:999px; padding:2px 10px; margin-bottom:12px; }
+  .step-grid { display:grid; gap:12px; }
+  .step-grid.s5 { grid-template-columns:repeat(5,1fr); }
+  .step-grid.s4 { grid-template-columns:repeat(4,1fr); }
+  .step-grid .step-card { padding:20px 16px; text-align:center; }
+  .step-grid .f-ico { margin:0 auto 12px; }
+  .toc-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+  .toc-columns .cat-stories li { display:flex; justify-content:space-between; gap:12px; }
+  .toc-columns .cat-stories li span { color:var(--ink3); flex:none; }
+  .sample-stack { display:grid; gap:18px; }
+  .sample-block { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow-sm); }
+  .sample-block h3 { margin:0 0 12px; font-size:18px; color:var(--primary); }
+  .sample-block p { font-size:14px; color:var(--ink2); margin:0 0 12px; line-height:1.9; }
+  .sample-block p:last-child { margin-bottom:0; }
+  .sample-label { display:inline-block; font-size:11.5px; font-weight:800; color:var(--primary); background:var(--soft); border-radius:6px; padding:3px 10px; margin-bottom:10px; }
+  .book-stage { position:relative; display:flex; align-items:center; justify-content:center; min-height:560px; }
+  .book-shadow { position:absolute; bottom:34px; width:280px; height:20px; border-radius:50%; background:rgba(0,0,0,.22); filter:blur(12px); }
+  .book-cover { position:relative; width:300px; max-width:76%; border-radius:5px 14px 14px 5px; border:1px solid var(--line); background:#fff; transform:rotate(-3deg); box-shadow:0 28px 60px rgba(0,0,0,.26), inset -8px 0 16px rgba(0,0,0,.06); }
+  .book-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+  .book-figure { margin:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow-sm); text-align:center; }
+  .book-stage picture, .book-figure picture { display:block; }
+  .book-figure img { width:100%; max-height:520px; object-fit:contain; object-position:top; border:1px solid var(--line); background:#fff; border-radius:8px; }
+  .book-figure figcaption { margin-top:12px; font-size:13px; color:var(--ink2); }
+  .who-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; }
+  .who-grid li { list-style:none; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:14px; color:var(--ink2); }
+  @media (max-width:900px){ .step-grid.s5{grid-template-columns:repeat(3,1fr);} .step-grid.s4{grid-template-columns:repeat(2,1fr);} .toc-columns{grid-template-columns:1fr;} .book-gallery{grid-template-columns:1fr;} .trust-inner.five{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:620px){ .trust-inner.five{grid-template-columns:1fr;} .step-grid.s5,.step-grid.s4{grid-template-columns:1fr;} .book-stage{min-height:440px;} .book-cover{width:240px;} }
+</style>
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/index.html" aria-label="返回 Yozer 首页">
+      <img class="brand-mark" src="/assets/logo-mark.png" alt="">
+      <span class="brand-text"><b>生命最初的三年</b><small>The First Three Years</small></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/index.html">首页</a>
+      <a href="#foreword">写在前面</a>
+      <a href="#inside">本书结构</a>
+      <a href="#how">章节编排</a>
+      <a href="#contents">完整目录</a>
+      <a href="#sample">试读第一章</a>
+      <a href="#gallery">内页样张</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" title="切换深浅主题" aria-label="切换深浅主题">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+      <button class="lang-switch" type="button" data-yh-lang-toggle aria-label="Switch to English">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> 悦泽心理 · 会员专用电子书</div>
+    <h1>生命最初的三年</h1>
+    <p class="lead"><strong>0—3 岁科学养育指南</strong><br>生命最初的三年，是信息最密集、变化最剧烈、也最让父母手足无措的三年。这本书按成长顺序，讲清楚这个阶段孩子会怎样、什么情况正常、你可以具体怎么做——每条建议都配一个实例情景，有对话、有正误示范，拿走就能用。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="#foreword">读前言</a>
+      <a class="btn btn-ghost btn-lg" href="#contents">看目录</a>
+      <a class="btn btn-ghost btn-lg" href="#sample">试读第一章</a>
+    </div>
+    <div class="hero-meta">
+      <span>0—3 岁</span>
+      <i></i>
+      <span>新生儿到幼儿</span>
+      <i></i>
+      <span>12 章</span>
+      <i></i>
+      <span>PDF 电子书</span>
+    </div>
+    <div class="hero-tags">
+      <span>科学养育</span>
+      <span>发育规律</span>
+      <span>可操作</span>
+      <span>安全底线</span>
+    </div>
+  </div>
+  <div class="hero-visual" aria-label="《生命最初的三年》封面">
+    <div class="glow" style="background:radial-gradient(420px 300px at 50% 35%, rgba(14,116,144,.22), transparent 70%)"></div>
+    <div class="book-stage">
+      <div class="book-shadow"></div>
+      <picture><source srcset="/assets/ebooks/years-cover.webp" type="image/webp"><img class="book-cover" src="/assets/ebooks/years-cover.png" alt="《生命最初的三年》封面" width="720" height="1021" decoding="async"></picture>
+      <div class="float-card" style="--accent:#0e7490"><span class="fc-ico">12</span><div><b>12 章科学养育</b><small>0—3 岁</small></div></div>
+      <div class="float-card" style="--accent:#0e7490"><span class="fc-ico">49</span><div><b>49 条实操建议</b><small>有对话有示范</small></div></div>
+    </div>
+    <p class="visual-note">封面与内页样张来自电子书原稿</p>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap trust-inner five">
+    <div class="trust-item"><b>12</b><span>章科学养育</span></div>
+    <div class="trust-item"><b>49</b><span>条实操建议</span></div>
+    <div class="trust-item"><b>12</b><span>张简笔画插图</span></div>
+    <div class="trust-item"><b>3.6万</b><span>字实操内容</span></div>
+    <div class="trust-item"><b>52</b><span>页 A5 篇幅</span></div>
+  </div>
+</section>
+
+<section class="section wrap" id="foreword">
+  <div class="sec-head">
+    <div class="kicker">FOREWORD</div>
+    <h2>写在前面</h2>
+    <p>翻开这本书之前，先听听作者想说什么</p>
+  </div>
+  <div class="sample-stack">
+    <div class="sample-block"><p>“他哭了，是不是我哪里做错了？”“三个月了还不会翻身，是不是发育慢了？”“别人家孩子都会叫妈妈了，我家怎么还只会咿呀？”“到底该不该抱？抱多了会不会惯坏？”</p></div>
+    <div class="sample-block"><p>如果你是一位新手父母，这些念头大概每天都在脑子里转几圈。生命最初的三年，是整个人生里信息最密集、变化最剧烈、也最让父母手足无措的三年。一个柔软的、只会啼哭的小生命，在三年里长成会跑、会说、会撒娇、会顶嘴的小人儿。</p></div>
+    <div class="sample-block"><p>更让人焦虑的是，关于这三年，你听到的建议往往是互相矛盾的。老人说“要绑腿，不然罗圈腿”，医生说“不要绑”；网上说“哭声免疫法，让他自己哭着入睡”，又有文章说“不及时回应会破坏安全感”。你像一个在信息的十字路口反复掉头的人，越看越糊涂，越学越不敢下手。</p></div>
+    <div class="sample-block"><p>这本书想做的，就是在这些互相矛盾的声音里，帮你理清“什么是对的、什么是过时的、什么需要警惕”。它以发展心理学和儿科学为依据，按 0—3 岁的成长顺序，逐阶段讲清楚三件事：这个阶段孩子会怎样、什么情况是正常的、你可以具体怎么做。</p></div>
+    <div class="sample-block"><p>全书共 12 章，从新生儿的喂养与睡眠起步，讲依恋与安全感的建立、大运动与语言的发育、情绪与哭闹的读懂、分离焦虑与入园、自主进食与如厕、早期阅读与游戏，再到发育里程碑与预警信号、常见误区辨正，最后落到父母自身的心理与家庭分工。</p></div>
+    <div class="sample-block"><p>第一句：每个孩子都有自己的节奏。书里写的月龄是“大多数孩子”的参考范围，不是必须达成的考试分数线。真正需要警惕的，是能力的“倒退”和明显的落后。</p></div>
+    <div class="sample-block"><p>第二句：回应一个婴儿，不会把他惯坏。0—3 岁，尤其是 1 岁以内，孩子的所有哭闹都是沟通，不是要挟。你及时、温暖地回应他，不是宠溺，而是在帮他建立对这个世界的根本信任。</p></div>
+    <div class="sample-block"><p>第三句：父母的状态，就是孩子成长的土壤。一个疲惫、焦虑、孤立无援的妈妈（或爸爸），很难持续给出耐心的回应。所以这本书最后一章专门讲父母自己——照顾好照护者，不是自私，而是这件工作能长久做下去的前提。</p></div>
+    <div class="sample-block"><p>还要郑重说明：本书提供的是科学养育的知识和思路，不能替代儿科医生、儿童保健科医生和专业医疗人员的诊断与建议。涉及喂养困难、发育异常、疾病、用药等问题，请务必咨询专业人士。</p></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="inside">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">INSIDE</div>
+      <h2>十二章 · 从新生儿到幼儿</h2>
+      <p>前几章讲“怎么照顾好一个小婴儿”，后几章转向“怎么陪一个幼儿长大”，可按问题查、像字典一样用</p>
+    </div>
+    <div class="part-grid">
+        <article class="feature reveal">
+          <div class="part-no">01</div>
+          <h3>喂养与依恋</h3>
+          <span class="part-count">2 章</span>
+          <p>新生儿喂养与睡眠的建立、依恋关系与安全感的形成——回应一个婴儿，不会把他惯坏。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="part-no">02</div>
+          <h3>发育与语言</h3>
+          <span class="part-count">2 章</span>
+          <p>翻身、爬行、站立、行走的大运动节奏；从咿呀到第一个词的语言启蒙。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="part-no">03</div>
+          <h3>情绪与日常</h3>
+          <span class="part-count">4 章</span>
+          <p>读懂哭闹、分离焦虑与入园、自主进食与饮食习惯、如厕训练——把日常过成养育。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="part-no">04</div>
+          <h3>安全与父母</h3>
+          <span class="part-count">4 章</span>
+          <p>早期阅读与游戏、发育里程碑与预警信号、常见误区辨正、父母的心理准备与家庭分工。</p>
+        </article>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">HOW IT WORKS</div>
+      <h2>每章五步，把道理变成动作</h2>
+      <p>统一的章节结构，先读懂孩子的发育规律，再给出可以照着做的具体方法</p>
+    </div>
+    <div class="step-grid s5">
+        <article class="step-card reveal"><div class="f-ico">🎈</div><h3>典型表现</h3><p>场景化开场，让你觉得“这说的就是我家孩子”</p></article>
+        <article class="step-card reveal"><div class="f-ico">🔍</div><h3>背后的原因</h3><p>用儿科学与发育心理学讲清行为根源，不焦虑不指责</p></article>
+        <article class="step-card reveal"><div class="f-ico">💡</div><h3>给父母的建议</h3><p>每条配一个实例情景，含对话与正误示范</p></article>
+        <article class="step-card reveal"><div class="f-ico">⚠️</div><h3>容易踩的坑</h3><p>点破常见误区，避免“越养越焦虑”</p></article>
+        <article class="step-card reveal"><div class="f-ico">🎓</div><h3>专家点评</h3><p>从发育角度收束，讲清对亲子关系的意义</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="contents">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">TABLE OF CONTENTS</div>
+      <h2>完整目录</h2>
+      <p>12 章 · 附真实页码 · 点击上方按钮可快速跳转试读</p>
+    </div>
+    <div class="toc-columns">
+        <div class="cat-vol reveal">
+          <h3>全书目录</h3>
+          <ul class="cat-stories">
+            <li>第 1 章 新生儿期：喂养与睡眠的建立 <span>6</span></li>
+            <li>第 2 章 依恋关系：安全感是如何形成的 <span>10</span></li>
+            <li>第 3 章 感统发育：翻身、爬行、站立、行走 <span>14</span></li>
+            <li>第 4 章 语言启蒙：从咿呀到第一个词 <span>18</span></li>
+            <li>第 5 章 情绪萌芽：读懂哭闹背后的需求 <span>22</span></li>
+            <li>第 6 章 分离焦虑与入园准备 <span>26</span></li>
+            <li>第 7 章 自主进食与饮食习惯 <span>29</span></li>
+            <li>第 8 章 如厕训练：时机与方法 <span>32</span></li>
+            <li>第 9 章 早期阅读与亲子游戏 <span>35</span></li>
+            <li>第 10 章 发育里程碑与预警信号 <span>38</span></li>
+            <li>第 11 章 常见养育误区辨正 <span>42</span></li>
+            <li>第 12 章 父母的心理准备与家庭分工 <span>46</span></li>
+            <li>后记：最初的三年，也是父母的三年 <span>50</span></li>
+            <li>附录 A：0—3 岁发育里程碑速查 <span>51</span></li>
+            <li>附录 B：需要就医的危险信号 <span>52</span></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="sample">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FREE SAMPLE</div>
+      <h2>第一章 · 试读</h2>
+      <p>以下为第 1 章完整节选，体验“场景 + 原因 + 建议 + 示范 + 点评”的编排</p>
+    </div>
+    <div class="sample-block" style="margin-bottom:18px;">
+      <div class="kicker">CHAPTER 01 · 喂养与依恋</div>
+      <h3 style="margin:10px 0 4px;">第 1 章　新生儿期：喂养与睡眠的建立</h3>
+      <p style="color:var(--ink3);margin:0;">——喂养与依恋：回应一个婴儿，不会把他惯坏</p>
+    </div>
+    <div class="sample-stack">
+      
+      <div class="sample-block">
+        <span class="sample-label">典型表现</span>
+        <p>“孩子出生才两周，一天要吃十几次奶，我怀疑是不是奶水不够。”</p><p>“半夜两小时醒一次，我已经一个月没睡过一个整觉了，快要撑不住。”</p><p>“他一放下就哭，抱着就睡，是不是被我抱习惯了？”</p><p>新生儿期（出生到满月前后）是父母最手忙脚乱的阶段。一个小生命带着完全不同的节奏闯进你的生活：他饿了就哭，饱了就睡，没有昼夜概念，也不懂得体谅大人。喂养和睡眠，几乎占据了这个阶段家庭生活的全部。</p>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">背后的原因</span>
+        <p>新生儿的胃很小，消化快。足月新生儿胃容量最初只有几十毫升，母乳又容易消化，所以吃得频繁是正常的——这不是你奶水不够的证据。</p><p>他还没有昼夜节律。胎儿期在妈妈肚子里，靠妈妈的活动和激素信号区分白天黑夜。出生后这套外部线索突然消失，需要几周时间重新建立。</p><p>他要的是“安全感”，不是“习惯”。新生儿从温暖、包裹、有心跳声的子宫来到明亮、空旷、声音杂乱的世界，会本能地寻求熟悉的包裹感和陪伴。被放下就哭，是适应外界的不安，不是被“抱坏了”。</p><p>“按需喂养”是这个阶段的黄金法则。婴儿的胃容量和生长速度决定了，固定时间表喂不现实，也不符合他的生理需要。</p>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">给父母的建议</span>
+        <p>建议一：学会读懂饥饿信号，按需喂养，而不是按钟点喂养。新生儿饿了会有一串信号：早期是转头找奶、张嘴、把手放到嘴边、发出咂嘴声；哭通常是“最后的抗议”。学会识别早期信号，能让你在他大哭前就喂上。</p><p>错误示范：妈妈严格照着“每三小时喂一次”的书，孩子不到点就哭，她硬撑着说“还没到时间，不能惯着他”，结果孩子哭得声嘶力竭，最后喂也喂不进，母子俩都崩溃。</p><p>正确示范：妈妈观察到孩子一醒来就转头、咂嘴，赶紧喂上，吃得安安静静。她不再盯着时钟，而是看孩子的信号和每天的尿布次数。两周后体检，体重增长正常，她悬着的心才放下。</p><p>建议二：仰卧睡眠，同室不同床——把安全放在第一位。每次睡觉都让宝宝仰卧（背部朝下），这是预防婴儿猝死综合征（SIDS）最有效的措施。床上要硬实平整，不要松软的枕头、厚被、毛绒玩具和床围。</p><p>建议三：用“白天亮、晚上暗”帮孩子建立昼夜节律。白天醒来后拉开窗帘、正常活动、多说话；夜间喂奶则保持昏暗、安静、少互动，只做必要的事。</p><p>建议四：哭闹时及时回应——回应不会宠坏新生儿。1 岁以内的孩子，哭是他唯一的语言。及时回应他，不会让他变得“黏人”或“被惯坏”；相反，被回应的婴儿会慢慢建立起“我一哭，就有人来，世界是安全的”这样的信任。</p>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">容易踩的坑</span>
+        <p>按月龄“打卡”喂奶。硬套时间表，忽视孩子的真实信号，容易喂得过少或过多。</p><p>趴睡、松软床品、同床大睡。这几条是睡眠安全的高风险因素，不要拿孩子的命去赌“应该没事”。</p><p>怕惯坏而故意不回应哭闹。1 岁以内的哭不是要挟，及时回应是建立安全感的关键。</p><p>妈妈一个人硬扛一切。睡眠剥夺会损害情绪和健康，家庭分工不是“帮忙”，是本分。</p><p>新生儿期是父母角色的“入职培训”，而喂养和睡眠是这门培训里最硬的两门课。请记住三个关键词：安全、回应、分工。</p><p>如果妈妈在产后持续两周以上情绪低落、失眠或过度睡眠、对什么都没兴趣、甚至有伤害自己或孩子的念头，这不是“想多了”，而可能是产后抑郁，需要及时寻求专业帮助。</p>
+      </div>
+      <div class="sample-block"><p>—— 以上为节选，完整内容见电子书 ——</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">INSIDE THE BOOK</div>
+      <h2>内页样张</h2>
+      <p>真实排版预览 · A5 竖版 · 黑白简笔画插图</p>
+    </div>
+    <div class="book-gallery">
+      <figure class="book-figure"><picture><source srcset="/assets/ebooks/years-cover.webp" type="image/webp"><img src="/assets/ebooks/years-cover.png" alt="封面设计" width="720" height="1021" loading="lazy" decoding="async"></picture><figcaption>封面设计</figcaption></figure>
+      <figure class="book-figure"><picture><source srcset="/assets/ebooks/years-toc.webp" type="image/webp"><img src="/assets/ebooks/years-toc.png" alt="目录 · 带页码" width="720" height="974" loading="lazy" decoding="async"></picture><figcaption>目录 · 带页码</figcaption></figure>
+      <figure class="book-figure"><picture><source srcset="/assets/ebooks/years-page.webp" type="image/webp"><img src="/assets/ebooks/years-page.png" alt="内页 · 插图与正文" width="720" height="974" loading="lazy" decoding="async"></picture><figcaption>内页 · 插图与正文</figcaption></figure>
+      <figure class="book-figure"><picture><source srcset="/assets/ebooks/years-sample.webp" type="image/webp"><img src="/assets/ebooks/years-sample.png" alt="第一章插图" width="720" height="721" loading="lazy" decoding="async"></picture><figcaption>第一章插图</figcaption></figure>
+    </div>
+    <p class="visual-note">图片为文档内嵌样张，仅作版式展示</p>
+  </div>
+</section>
+
+<section class="section wrap" id="who">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">WHO IT'S FOR</div>
+      <h2>这本书适合谁</h2>
+    </div>
+    <ul class="who-grid"><li>0—3 岁孩子的父母与主要照护者</li>
+<li>新手父母、祖辈照护者</li>
+<li>被喂养、哄睡、哭闹、发育问题困扰的家庭</li>
+<li>希望“先懂发育再养育”、减少焦虑的家长</li>
+<li>喜欢“有对话、可直接照做”的实用派读者</li></ul>
+  </div>
+</section>
+
+<section class="section section-alt" id="specs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">SPECIFICATIONS</div>
+      <h2>电子书规格</h2>
+    </div>
+    <div class="table-scroll"><table class="lib-table">
+      <thead><tr><th>项目</th><th>说明</th></tr></thead>
+      <tbody>
+<tr><th>书名</th><td>生命最初的三年</td></tr>
+<tr><th>副标题</th><td>0—3 岁科学养育指南</td></tr>
+<tr><th>适读年龄</th><td>0—3 岁</td></tr>
+<tr><th>篇幅</th><td>12 章 · 约 3.6 万字 · 52 页</td></tr>
+<tr><th>版本</th><td>A5 版（148×210mm）</td></tr>
+<tr><th>格式</th><td>PDF 电子书</td></tr>
+<tr><th>插图</th><td>12 张黑白简笔画题图</td></tr>
+<tr><th>附录</th><td>发育里程碑速查 · 需要就医的危险信号</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="section wrap" id="afterword">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">AFTERWORD</div>
+      <h2>写在最后的话</h2>
+    </div>
+    <div class="sample-stack">
+      <div class="sample-block"><p>写到这里，我想起一位妈妈说过的话：“我以为我是在养一个孩子，后来才发现，是孩子在重新养了一遍我。”</p></div>
+      <div class="sample-block"><p>生命最初的三年，孩子从一个柔软的、只会啼哭的小生命，长成会跑、会说、会撒娇、会顶嘴的小人儿。这三年里，他学会了抬头、翻身、走路、说话、表达爱——而父母，也在这三年里，学会了耐心、学会了让步、学会了在无眠的夜里依然起身。</p></div>
+      <div class="sample-block"><p>这三年，是孩子成长的三年，也是父母成长的三年。</p></div>
+      <div class="sample-block"><p>比具体做法更重要的，是这几个朴素的信念：回应一个婴儿，不会宠坏他；发育有自己的节奏，不必焦虑攀比；你的状态，就是孩子成长的土壤；遇到拿不准的，交给专业的人。</p></div>
+      <div class="sample-block"><p>也请记得，这本书不能替代医生。涉及疾病、发育、用药的判断，请务必咨询儿科和儿童保健科的专业人员。书里凡是提醒“及时就医”的地方，都是认真的。</p></div>
+      <div class="sample-block"><p>养育没有标准答案，只有适合你和孩子的方式。你会犯错，会吼孩子，会在深夜里自责，也会在某个清晨，被孩子一个甜甜的笑、一句软软的“妈妈/爸爸”融化，觉得一切都值了。</p></div>
+      <div class="sample-block"><p>愿你在这最初的三年里，既能好好爱他，也别忘了好好爱自己。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="apply">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FULL VERSION</div>
+      <h2>电子书完整版申请</h2>
+    </div>
+    <div class="apply-card reveal">
+      <p>本页为电子书介绍与节选。如需获取完整版，请通过以下方式联系我们。</p>
+      <div class="apply-contacts">
+        <div class="apply-contact"><span class="apply-k">微信</span><span class="apply-v">YozerHealth</span></div>
+        <div class="apply-contact"><span class="apply-k">邮箱</span><a class="apply-v" href="mailto:YozerHealth@163.com">YozerHealth@163.com</a></div>
+      </div>
+      <p class="apply-note">添加时请注明电子书名称，我们会尽快回复。</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <div class="brand"><img class="brand-mark" src="/assets/logo-mark.png" alt=""><span class="brand-text"><b>Yozer</b><small>悦泽科技</small></span></div>
+      <p>专注家庭健康与儿童心理的产品团队，坚持端侧优先、隐私优先。</p>
+    </div>
+    <div class="footer-col"><h4>生命最初的三年</h4><a href="#foreword">写在前面</a><a href="#contents">完整目录</a><a href="#sample">试读第一章</a><a href="#gallery">内页样张</a></div>
+    <div class="footer-col"><h4>Yozer 全家应用</h4><a href="/index.html">首页</a><a href="/mentalbook.html">悦泽心理绘本</a><a href="/yozerhealth.html">悦泽健康</a><a href="/psychometric.html">悦泽量表</a><a href="/mentalaid.html">悦泽心情急救</a></div>
+    <div class="footer-col"><h4>Yozer 电子书</h4><a href="/parenting.html">育儿手册</a><a href="/seeing-each-other.html">看见彼此</a><a href="/adolescence.html">陪孩子走过青春期</a><a href="/first-three-years.html">生命最初的三年</a></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 Yozer 悦泽科技</span><span class="disclaimer">本电子书为悦泽心理会员专用，仅供个人学习参考，不替代专业医疗、心理或教育诊断。</span></div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

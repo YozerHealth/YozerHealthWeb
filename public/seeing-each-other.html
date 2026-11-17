@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="看见彼此——悦泽心理会员专用电子书。5 个家庭故事、27 段多视角独白、约 4 万字，覆盖二胎争宠、厌学、被欺负、手机沉迷与考试焦虑。">
+<meta name="theme-color" content="#0f766e">
+<title>看见彼此 · 5 个家庭的成长故事 · 儿童心理学多视角读本</title>
+<link rel="icon" type="image/png" href="/assets/app-icon.png">
+<link rel="preload" as="image" href="/assets/ebooks/seeing-cover.webp" type="image/webp">
+<link rel="stylesheet" href="/assets/site.css">
+<script defer src="/assets/i18n-dict.js"></script>
+<script defer src="/assets/i18n-dict-seeing.js"></script>
+<script defer src="/assets/i18n.js"></script>
+<style>
+  .trust-inner.five { grid-template-columns: repeat(5, 1fr); }
+  .part-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
+  .part-grid .feature { padding:22px 20px; position:relative; }
+  .part-no { font-size:11px; letter-spacing:.16em; color:var(--primary); font-weight:800; margin-bottom:8px; }
+  .part-count { display:inline-block; font-size:11.5px; color:var(--primary); background:var(--soft-2); border-radius:999px; padding:2px 10px; margin-bottom:12px; }
+  .step-grid { display:grid; gap:12px; }
+  .step-grid.s5 { grid-template-columns:repeat(5,1fr); }
+  .step-grid.s4 { grid-template-columns:repeat(4,1fr); }
+  .step-grid .step-card { padding:20px 16px; text-align:center; }
+  .step-grid .f-ico { margin:0 auto 12px; }
+  .toc-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+  .toc-columns .cat-stories li { display:flex; justify-content:space-between; gap:12px; }
+  .toc-columns .cat-stories li span { color:var(--ink3); flex:none; }
+  .sample-stack { display:grid; gap:18px; }
+  .sample-block { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow-sm); }
+  .sample-block h3 { margin:0 0 12px; font-size:18px; color:var(--primary); }
+  .sample-block p { font-size:14px; color:var(--ink2); margin:0 0 12px; line-height:1.9; }
+  .sample-block p:last-child { margin-bottom:0; }
+  .sample-label { display:inline-block; font-size:11.5px; font-weight:800; color:var(--primary); background:var(--soft); border-radius:6px; padding:3px 10px; margin-bottom:10px; }
+  .book-stage { position:relative; display:flex; align-items:center; justify-content:center; min-height:560px; }
+  .book-shadow { position:absolute; bottom:34px; width:280px; height:20px; border-radius:50%; background:rgba(0,0,0,.22); filter:blur(12px); }
+  .book-cover { position:relative; width:300px; max-width:76%; border-radius:5px 14px 14px 5px; border:1px solid var(--line); background:#fff; transform:rotate(-3deg); box-shadow:0 28px 60px rgba(0,0,0,.26), inset -8px 0 16px rgba(0,0,0,.06); }
+  .book-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+  .book-figure { margin:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow-sm); text-align:center; }
+  .book-stage picture, .book-figure picture { display:block; }
+  .book-figure img { width:100%; max-height:520px; object-fit:contain; object-position:top; border:1px solid var(--line); background:#fff; border-radius:8px; }
+  .book-figure figcaption { margin-top:12px; font-size:13px; color:var(--ink2); }
+  .who-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; }
+  .who-grid li { list-style:none; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:14px; color:var(--ink2); }
+  @media (max-width:900px){ .step-grid.s5{grid-template-columns:repeat(3,1fr);} .step-grid.s4{grid-template-columns:repeat(2,1fr);} .toc-columns{grid-template-columns:1fr;} .book-gallery{grid-template-columns:1fr;} .trust-inner.five{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:620px){ .trust-inner.five{grid-template-columns:1fr;} .step-grid.s5,.step-grid.s4{grid-template-columns:1fr;} .book-stage{min-height:440px;} .book-cover{width:240px;} }
+</style>
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/index.html" aria-label="返回 Yozer 首页">
+      <img class="brand-mark" src="/assets/logo-mark.png" alt="">
+      <span class="brand-text"><b>看见彼此</b><small>Seeing Each Other</small></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/index.html">首页</a>
+      <a href="#foreword">前言</a>
+      <a href="#inside">本书结构</a>
+      <a href="#how">章节编排</a>
+      <a href="#contents">完整目录</a>
+      <a href="#sample">试读第一章</a>
+      <a href="#gallery">内页样张</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" title="切换深浅主题" aria-label="切换深浅主题">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+      <button class="lang-switch" type="button" data-yh-lang-toggle aria-label="Switch to English">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> 悦泽心理 · 会员专用电子书</div>
+    <h1>看见彼此</h1>
+    <p class="lead"><strong>5 个家庭的成长故事 · 儿童心理学多视角读本</strong><br>同一件事，孩子、父亲、母亲、老师看到的是完全不同的故事。当所有人都确信“自己是对的”，真相反而消失了。这本书用多视角叙事，把家庭里那些说不清、吵不完的事，重新摊开在阳光下——读到最后你会发现：孩子的问题，常常是大人内心的一面镜子。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="#foreword">读前言</a>
+      <a class="btn btn-ghost btn-lg" href="#contents">看目录</a>
+      <a class="btn btn-ghost btn-lg" href="#sample">试读第一章</a>
+    </div>
+    <div class="hero-meta">
+      <span>3—12 岁孩子家庭</span>
+      <i></i>
+      <span>多视角叙事</span>
+      <i></i>
+      <span>5 个故事</span>
+      <i></i>
+      <span>PDF 电子书</span>
+    </div>
+    <div class="hero-tags">
+      <span>多视角叙事</span>
+      <span>儿童心理学</span>
+      <span>看见彼此</span>
+      <span>有理论但不掉书袋</span>
+    </div>
+  </div>
+  <div class="hero-visual" aria-label="《看见彼此》封面">
+    <div class="glow" style="background:radial-gradient(420px 300px at 50% 35%, rgba(15,118,110,.22), transparent 70%)"></div>
+    <div class="book-stage">
+      <div class="book-shadow"></div>
+      <picture><source srcset="/assets/ebooks/seeing-cover.webp" type="image/webp"><img class="book-cover" src="/assets/ebooks/seeing-cover.png" alt="《看见彼此》封面" width="720" height="1021" decoding="async"></picture>
+      <div class="float-card" style="--accent:#0f766e"><span class="fc-ico">5</span><div><b>5 个家庭故事</b><small>多视角叙事</small></div></div>
+      <div class="float-card" style="--accent:#0f766e"><span class="fc-ico">27</span><div><b>27 段多视角独白</b><small>儿童心理学</small></div></div>
+    </div>
+    <p class="visual-note">封面与内页样张来自电子书原稿</p>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap trust-inner five">
+    <div class="trust-item"><b>5</b><span>个家庭故事</span></div>
+    <div class="trust-item"><b>27</b><span>段多视角独白</span></div>
+    <div class="trust-item"><b>5</b><span>大家长议题</span></div>
+    <div class="trust-item"><b>11</b><span>张简笔画插图</span></div>
+    <div class="trust-item"><b>4万</b><span>字叙事内容</span></div>
+  </div>
+</section>
+
+<section class="section wrap" id="foreword">
+  <div class="sec-head">
+    <div class="kicker">FOREWORD</div>
+    <h2>前言</h2>
+    <p>翻开这本书之前，先听听作者想说什么</p>
+  </div>
+  <div class="sample-stack">
+    <div class="sample-block"><p>有一天，一位母亲来找我，一坐下就说：“老师，我家老大有问题，她太自私了，什么东西都不肯分给弟弟。”</p></div>
+    <div class="sample-block"><p>她带三岁半的儿子从早教课回来，路上给儿子买了一个蓝色的小汽车。七岁的女儿看见后，一把抢过去说“这是我的”，弟弟哭了起来。她让女儿还给弟弟，女儿不肯，还说“我讨厌弟弟，你只喜欢他”。她当时又气又心寒，脱口而出：“你是姐姐，怎么这么不懂事！”女儿哭着跑回房间，把门反锁了。</p></div>
+    <div class="sample-block"><p>这不是一个“自私的孩子”的故事，也不是一个“偏心母亲”的故事。这是一个每个人都只看见自己那一部分真相的故事。母亲看见的是女儿抢玩具、不肯分享；女儿看见的是妈妈一整天都没看她，回家还带了弟弟的礼物；三岁半的弟弟看见的只是“姐姐抢了我的车”；而父亲下班回来，只听见妻子抱怨“女儿太自私”，看见女儿锁着门不出来，于是他得出第四个版本的结论——“你太惯她了”。</p></div>
+    <div class="sample-block"><p>同一件事，四个版本，四种痛苦。每个人都真诚地相信自己受了委屈，每个人都觉得对方不可理喻。于是这个家庭反复上演相同的争执，却从来没人真正解决问题——因为他们解决的从来不是同一件事。</p></div>
+    <div class="sample-block"><p>这就是这本书想做的事：把同一件事，用不同人的眼睛重新讲一遍。</p></div>
+    <div class="sample-block"><p>我们选择五个最普遍、最让家长头疼的场景——二胎争宠、厌学、被欺负、沉迷手机、考试焦虑。每个故事都由事件中的几个人物轮流讲述：孩子自己、父亲、母亲、老师，有时还有事件里的另一个孩子。每个人看到的都只是局部，每个人的叙述都带着自己的情绪、立场和盲区。读到最后，由心理学专家逐层拆解：每个人真正在意的是什么，误会在哪里产生，又可以从哪一步开始改变。</p></div>
+    <div class="sample-block"><p>我想邀请你做一件有点困难的事：读每个故事时，先不要急着评判谁对谁错，而是试着真正住进那个人的身体里，用他的眼睛看一遍这个世界。当你读完一个孩子的内心独白，也许你会发现，那个“不懂事”“不听话”“不可理喻”的行为背后，藏着一个你从未听懂的请求。</p></div>
+    <div class="sample-block"><p>这本书不提供标准答案。家庭里的事情，从来没有标准答案。但它提供一样可能更重要的东西——看见彼此的能力。当一个家庭里的人开始能说出“原来你是这样想的”，改变就已经开始了。</p></div>
+    <div class="sample-block"><p>愿每个读到这里的人，都能在故事里，认出自己，也认出那个你一直想读懂的孩子。</p></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="inside">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">INSIDE</div>
+      <h2>五个故事 · 五个最让家长头疼的场景</h2>
+      <p>二胎争宠、厌学、被欺负、沉迷手机、考试焦虑——每个故事都由事件中的几个人物轮流讲述</p>
+    </div>
+    <div class="part-grid">
+        <article class="feature reveal">
+          <div class="part-no">01</div>
+          <h3>我的玩具属于谁</h3>
+          <span class="part-count">二胎争宠</span>
+          <p>一件蓝色小汽车，怎么成了家庭战争的开始？孩子、弟弟、妈妈、爸爸，四种委屈，四个版本。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="part-no">02</div>
+          <h3>我不想上学</h3>
+          <span class="part-count">厌学</span>
+          <p>肚子疼是真的吗？当“我不想上学”背后藏着说不出口的秘密，大人需要先把评判放下。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="part-no">03</div>
+          <h3>操场上的那一推</h3>
+          <span class="part-count">被欺负</span>
+          <p>“男孩打闹很正常”？被欺负与“主动伤人”之间，大人的第一反应决定了孩子接下来的一生。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="part-no">04</div>
+          <h3>屏幕里的世界</h3>
+          <span class="part-count">手机沉迷</span>
+          <p>孩子沉迷的也许不是手机，而是一个现实里得不到的自己。父亲与儿子，在纸条里重新看见彼此。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="part-no">05</div>
+          <h3>考卷上的红叉</h3>
+          <span class="part-count">考试焦虑</span>
+          <p>考了 99 分，为什么只被问“那 1 分丢在哪”？完美主义的孩子背后，是父母“有条件的爱”。</p>
+        </article>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">HOW IT WORKS</div>
+      <h2>每章四步，把“对错”变成“看见”</h2>
+      <p>同一件事，用不同人的眼睛重新讲一遍——先放下评判，再走进每个人的内心</p>
+    </div>
+    <div class="step-grid s4">
+        <article class="step-card reveal"><div class="f-ico">🎬</div><h3>事件回放</h3><p>用中立笔触还原事情经过，作为所有人叙述的共同底座</p></article>
+        <article class="step-card reveal"><div class="f-ico">👥</div><h3>多视角叙述</h3><p>人物依次出场各讲各的版本，留意同一句话被不同人听见的差异</p></article>
+        <article class="step-card reveal"><div class="f-ico">🔍</div><h3>专家点评</h3><p>心理学视角逐层拆解行为动机、误会机制与改变路径</p></article>
+        <article class="step-card reveal"><div class="f-ico">💬</div><h3>读后思考</h3><p>几个可以带回家庭讨论的问题，把看见变成行动</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="contents">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">TABLE OF CONTENTS</div>
+      <h2>完整目录</h2>
+      <p>5 个故事 · 附真实页码 · 点击上方按钮可快速跳转试读</p>
+    </div>
+    <div class="toc-columns">
+        <div class="cat-vol reveal">
+          <h3>全书目录</h3>
+          <ul class="cat-stories">
+            <li>前言：同一件事，为什么会有完全不同的故事 <span>3</span></li>
+            <li>如何使用本书 <span>5</span></li>
+            <li>故事一 我的玩具属于谁（二胎争宠） <span>6</span></li>
+            <li>故事二 我不想上学（厌学） <span>16</span></li>
+            <li>故事三 操场上的那一推（被欺负） <span>26</span></li>
+            <li>故事四 屏幕里的世界（手机沉迷） <span>36</span></li>
+            <li>故事五 考卷上的红叉（考试焦虑） <span>45</span></li>
+            <li>后记：每个大人心里，都住着一个没被看见的孩子 <span>53</span></li>
+            <li>附录：读后思考与家庭讨论指南 <span>55</span></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="sample">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FREE SAMPLE</div>
+      <h2>故事一 · 试读</h2>
+      <p>以下为第一个故事的完整节选，体验“多视角叙事”的读法</p>
+    </div>
+    <div class="sample-block" style="margin-bottom:18px;">
+      <div class="kicker">STORY 01 · 二胎争宠</div>
+      <h3 style="margin:10px 0 4px;">故事一　我的玩具属于谁</h3>
+      <p style="color:var(--ink3);margin:0;">——二胎争宠：同一件礼物，为什么成了家庭战争的开始</p>
+    </div>
+    <div class="sample-stack">
+      
+      <div class="sample-block">
+        <div class="table-scroll"><table class="lib-table">
+          <thead><tr><th>人物</th><th>年龄</th><th>身份</th></tr></thead>
+          <tbody>
+          <tr><td>陈一诺</td><td>7 岁</td><td>老大，小学一年级女孩</td></tr>
+          <tr><td>陈一航</td><td>3 岁半</td><td>老二，幼儿园小班男孩</td></tr>
+          <tr><td>李慧</td><td>35 岁</td><td>妈妈，公司职员，弹性工作</td></tr>
+          <tr><td>陈建国</td><td>38 岁</td><td>爸爸，工程师</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">事件回放</span>
+        <p>那是一个普通的周五下午，十一月初，天黑得早，四点多屋里的光就已经有点暗了。后来一家人回想起来，谁也说不清到底是哪一个瞬间开始不对劲的——也许是从车上那句没被回应的话开始，也许是从进门时那辆蓝色的车开始。</p><p>一诺走在旁边，一路上想跟妈妈讲学校里的事，但妈妈在回工作消息，只是心不在焉地“嗯”了几声。一诺看见弟弟抱着新汽车，走过去一把抢过来，说：“这是我的！”弟弟哭了。妈妈从厨房出来，脱口而出：“一诺！你是姐姐，让着点弟弟！快还给弟弟！”</p><p>一件玩具，就这样把一家人隔成了四座孤岛。</p>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">视角一：陈一诺（7 岁）</span>
+        <p>我一看见那辆车，心里就“咯噔”一下。不是因为我也想要那辆车——我早就过了玩那种车的年纪了。可是妈妈从来没给我买过礼物。弟弟有的东西，我也有，但那是因为“你大了也能玩”，不是专门给我买的。我分得出来。</p><p>我把车抢过来，其实是想让她看看我。我想让她说：“一诺，你也想要一个吗？妈妈下次给你买。”只要她说这一句，我就会把车还给弟弟。可是她没有。她说的是：“你是姐姐，让着点弟弟。”</p><p>我好累啊。我在学校是好学生，在家里好像只是一个大号的弟弟。</p><p>那天晚上，我把门反锁了。其实我不是不想出去，我是想等他们来敲门，来问我一句“一诺，你还好吗”。我在门后面坐了很久很久。没有人来敲门。</p><p>我不是一个坏孩子。可是那天下午，我真的很想让妈妈看我一眼。哪怕就一眼。妈妈，我不是不想当姐姐，我只是想当一次你的孩子。</p>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">视角二：陈一航（3 岁半）</span>
+        <p>车车。我的车车。妈妈给我买的。蓝色的，会嘀嘀叫，还有灯。我最喜欢了。</p><p>姐姐过来了。姐姐说，这是我的。姐姐把车车拿走了，举得高高的。我够不到。我哭了。妈妈来了。妈妈好凶。我不懂。我哪里惹姐姐了？我只是想玩我的车车。</p><p>我想跟姐姐玩。我把车车放在姐姐门口。可是姐姐没有拿进去。妈妈，姐姐为什么不喜欢我了？</p>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">视角三：李慧（妈妈，35 岁）</span>
+        <p>我承认，我那天吼她了。事后我也后悔。可是我实在太累了。你们不知道带两个孩子是什么感觉。我像一个不停转的陀螺，从早转到晚，没有一刻是属于自己的。</p><p>一诺总说我不关心她。可是我每天为她做这么多事，怎么会是不关心？那天一诺从学校回来，一路上想跟我讲话，我没理她。到了家，我第一句话是夸弟弟。她一整天积攒的那些“想被看见”，全被我忽略了。那辆车只是一个导火索——她抢的不是车，是那句“妈妈也给你买了东西”。</p><p>我一直以为，大的孩子懂事是理所当然的。可是我忘了，她也才七岁。她也需要妈妈蹲下来，看着她的眼睛，说一句“今天想我了没有”。</p>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">视角四：陈建国（爸爸，38 岁）</span>
+        <p>我下班回来，李慧把事情跟我说了一遍，我第一反应是：多大点事。孩子之间抢玩具，不是每天都发生吗？所以我去敲一诺的门，说“出来跟弟弟道歉”。我觉得这很正常——你抢了弟弟的东西，你说了难听的话，你当然要道歉。这不是是非对错吗？</p><p>我是家里的老二。我哥从小成绩好，是爸妈的骄傲，我一直是那个“不太被看见”的。我爸对我最常说的一句话是“你看看你哥”。现在轮到我一诺，我不知不觉又用了我爸那套——“你是姐姐，要让着弟弟”“你怎么这么不懂事”。这些话我小时候听着刺耳，现在居然从我自己的嘴里说出来了。</p><p>我站在她门外的时候，离她只有一步之遥。可是我敲的是“你出来道歉”那扇门，不是“你还好吗”那扇门。</p>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">视角五：专家点评</span>
+        <p>这是一个再典型不过的“二胎争宠”场景，但它的典型之处，恰恰在于没有一个人是坏人，却人人都受了伤。</p><p>第一层：一诺抢的不是车，是“被看见”。6—12 岁的学龄期孩子正处于“勤奋感对自卑感”的阶段，他们非常在意“我是不是有用的、被需要的、被认可的”。她说“你只喜欢他”，翻译过来其实是：“妈妈，你是不是不爱我了？”</p><p>第二层：李慧的委屈是真的，她的盲区也是真的。很多父母的误区在于：把“我为孩子做了多少”当成“孩子感受到多少爱”的证明。但孩子感受爱，靠的不是事情的数量，而是那些“你专门为我停下来”的瞬间。</p><p>第三层：陈建国的“规则”没错，但用错了时机。在一个孩子情绪崩溃的时刻讲规则，等于对着一个溺水的人讲游泳要领。她需要的第一样东西不是“规则”，而是“连接”。</p><p>可以改变的第一步：给“单独的时间”，而不是“均等的物资”；把“你是姐姐”换成“你也需要被照顾”；在情绪崩溃时，先连接，后规则；父亲要成为“看见者”，而不只是“裁判”；允许孩子“不喜欢弟弟”，但守住行为的边界。</p><p>二胎家庭里，老大最怕的从来不是“分享”，而是“失去”。当父母能让每个孩子都确信“我是被单独爱着的”，那份抢夺来的安全感，就用不着抢了。</p>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">后来：那扇门</span>
+        <p>那件事过去大约一个月。一个周六的上午，李慧对一诺说：“今天妈妈带你出去，就我们两个人。你想去哪儿？”一诺抬起头，看了妈妈很久，像是在确认这句话是不是真的。</p><p>那天上午，她们在书店待了两个多小时。快走的时候，一诺忽然说：“妈妈，你下次……还能只带我出来吗？”李慧的喉咙一下子哽住了。她说：“能。每周都行。”回家的路上，一诺主动牵住了妈妈的手。</p><p>同一周的晚上，陈建国敲了敲一诺的门，问：“爸爸能进来吗？”这与一个月前那句“出来跟弟弟道歉”，是完全不同的一句话。那天晚上，父女俩坐在地毯上拼了一个小时的乐高。</p><p>“爸爸以前错了。你不用总是让着谁。你也是个孩子。”一诺没说话，可是她靠过来，轻轻抱了爸爸一下。</p>
+      </div>
+      <div class="sample-block">
+        <span class="sample-label">读后思考</span>
+        <p>回想你家最近一次孩子之间的冲突，除了“谁对谁错”，那个“输掉”的孩子可能在用行为表达什么请求？</p><p>你每天对孩子说的“你是哥哥/姐姐”，是在肯定他，还是在要求他？</p><p>如果让你给每个孩子每天十分钟“专属时间”，你愿意从今晚开始吗？你会怎么做？</p>
+      </div>
+      <div class="sample-block"><p>—— 以上为节选，完整内容见电子书 ——</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">INSIDE THE BOOK</div>
+      <h2>内页样张</h2>
+      <p>真实排版预览 · A5 竖版 · 黑白简笔画插图</p>
+    </div>
+    <div class="book-gallery">
+      <figure class="book-figure"><picture><source srcset="/assets/ebooks/seeing-cover.webp" type="image/webp"><img src="/assets/ebooks/seeing-cover.png" alt="封面设计" width="720" height="1021" loading="lazy" decoding="async"></picture><figcaption>封面设计</figcaption></figure>
+      <figure class="book-figure"><picture><source srcset="/assets/ebooks/seeing-toc.webp" type="image/webp"><img src="/assets/ebooks/seeing-toc.png" alt="目录 · 带页码" width="720" height="974" loading="lazy" decoding="async"></picture><figcaption>目录 · 带页码</figcaption></figure>
+      <figure class="book-figure"><picture><source srcset="/assets/ebooks/seeing-page.webp" type="image/webp"><img src="/assets/ebooks/seeing-page.png" alt="内页 · 插图与正文" width="720" height="974" loading="lazy" decoding="async"></picture><figcaption>内页 · 插图与正文</figcaption></figure>
+      <figure class="book-figure"><picture><source srcset="/assets/ebooks/seeing-sample.webp" type="image/webp"><img src="/assets/ebooks/seeing-sample.png" alt="第一章插图" width="720" height="608" loading="lazy" decoding="async"></picture><figcaption>第一章插图</figcaption></figure>
+    </div>
+    <p class="visual-note">图片为文档内嵌样张，仅作版式展示</p>
+  </div>
+</section>
+
+<section class="section wrap" id="who">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">WHO IT'S FOR</div>
+      <h2>这本书适合谁</h2>
+    </div>
+    <ul class="who-grid"><li>3—12 岁孩子的家长与主要照护者</li>
+<li>希望真正“听懂”孩子、减少家庭争执的父母</li>
+<li>被二胎争宠、厌学、被欺负、手机、考试焦虑困扰的家庭</li>
+<li>教师、心理咨询师与家庭教育从业者</li>
+<li>喜欢叙事、愿意在故事里照见自己的读者</li></ul>
+  </div>
+</section>
+
+<section class="section section-alt" id="specs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">SPECIFICATIONS</div>
+      <h2>电子书规格</h2>
+    </div>
+    <div class="table-scroll"><table class="lib-table">
+      <thead><tr><th>项目</th><th>说明</th></tr></thead>
+      <tbody>
+<tr><th>书名</th><td>看见彼此</td></tr>
+<tr><th>副标题</th><td>5 个家庭的成长故事 · 儿童心理学多视角读本</td></tr>
+<tr><th>读者对象</th><td>3—12 岁孩子的家长、教师与咨询师</td></tr>
+<tr><th>篇幅</th><td>5 个故事 · 约 4 万字 · 56 页</td></tr>
+<tr><th>版本</th><td>A5 版（148×210mm）</td></tr>
+<tr><th>格式</th><td>PDF 电子书</td></tr>
+<tr><th>插图</th><td>11 张黑白简笔画题图</td></tr>
+<tr><th>附录</th><td>读后思考与家庭讨论指南</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="section wrap" id="afterword">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">AFTERWORD</div>
+      <h2>写在最后的话</h2>
+    </div>
+    <div class="sample-stack">
+      <div class="sample-block"><p>写完这五个故事，我忽然发现一件有意思的事。在这五个家庭里，真正发生转变的，往往不是孩子，而是大人。</p></div>
+      <div class="sample-block"><p>每一个孩子的改变背后，都站着一个愿意先改变的大人。</p></div>
+      <div class="sample-block"><p>我们总想着“如何教育孩子”，却很少想“我该如何调整自己”。可是这五个故事告诉我们：孩子的问题，常常是大人内心的一面镜子。</p></div>
+      <div class="sample-block"><p>写这些故事的时候，我常常会想起一句话：每个大人心里，都住着一个没被看见的孩子。</p></div>
+      <div class="sample-block"><p>育儿，到最后都是育己。你怎样对待自己，就会怎样对待孩子；你和自己的关系，决定了你和孩子的关系。</p></div>
+      <div class="sample-block"><p>如果这本书能让你在某个瞬间停下来说一句：“原来他是这样想的”——那么，它就值得了。</p></div>
+      <div class="sample-block"><p>你不需要做完美的父母。你只需要做一个，愿意看见孩子的父母。因为被看见，是一个孩子能收到的，最好的礼物。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="apply">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FULL VERSION</div>
+      <h2>电子书完整版申请</h2>
+    </div>
+    <div class="apply-card reveal">
+      <p>本页为电子书介绍与节选。如需获取完整版，请通过以下方式联系我们。</p>
+      <div class="apply-contacts">
+        <div class="apply-contact"><span class="apply-k">微信</span><span class="apply-v">YozerHealth</span></div>
+        <div class="apply-contact"><span class="apply-k">邮箱</span><a class="apply-v" href="mailto:YozerHealth@163.com">YozerHealth@163.com</a></div>
+      </div>
+      <p class="apply-note">添加时请注明电子书名称，我们会尽快回复。</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <div class="brand"><img class="brand-mark" src="/assets/logo-mark.png" alt=""><span class="brand-text"><b>Yozer</b><small>悦泽科技</small></span></div>
+      <p>专注家庭健康与儿童心理的产品团队，坚持端侧优先、隐私优先。</p>
+    </div>
+    <div class="footer-col"><h4>看见彼此</h4><a href="#foreword">前言</a><a href="#contents">完整目录</a><a href="#sample">试读第一章</a><a href="#gallery">内页样张</a></div>
+    <div class="footer-col"><h4>Yozer 全家应用</h4><a href="/index.html">首页</a><a href="/mentalbook.html">悦泽心理绘本</a><a href="/yozerhealth.html">悦泽健康</a><a href="/psychometric.html">悦泽量表</a><a href="/mentalaid.html">悦泽心情急救</a></div>
+    <div class="footer-col"><h4>Yozer 电子书</h4><a href="/parenting.html">育儿手册</a><a href="/seeing-each-other.html">看见彼此</a><a href="/adolescence.html">陪孩子走过青春期</a><a href="/first-three-years.html">生命最初的三年</a></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 Yozer 悦泽科技</span><span class="disclaimer">本电子书为悦泽心理会员专用，仅供个人学习参考，不替代专业医疗、心理或教育诊断。</span></div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
