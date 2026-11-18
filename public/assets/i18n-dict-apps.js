@@ -31,5 +31,16 @@ Object.assign(window.YH_DICT, {
   "生命最初的三年": "The First Three Years",
   "0—3 岁科学养育指南，12 章、49 条实操建议，从新生儿喂养、睡眠与依恋到发育里程碑，拿走就能用。": "A scientific parenting guide for ages 0–3: 12 chapters and 49 practical tips, from newborn feeding, sleep and attachment to developmental milestones — ready to use.",
   "覆盖婴幼儿到老年的全年龄心理量表测评工具，46 个量表、1047 题，本地加密、无需联网、一键导出 PDF 报告。": "An all-age psychological scale assessment tool from infants to elderly: 46 scales, 1,047 items, locally encrypted, no network, one-tap PDF report.",
-  "无需注册、不联网、不留记录的青少年情绪急救工具，打开即用的呼吸锚，10 秒内开始生效。": "A teen emotional first-aid tool with no registration, no network and no records; a breathing anchor ready on open, working within 10 seconds."
+  "无需注册、不联网、不留记录的青少年情绪急救工具，打开即用的呼吸锚，10 秒内开始生效。": "A teen emotional first-aid tool with no registration, no network and no records; a breathing anchor ready on open, working within 10 seconds.",
+  "Yozer 项目入口 —— 悦泽心理绘本、悦泽健康、悦泽量表、悦泽心情急救四款 Android 应用，以及《陪孩子长大》《看见彼此》《陪孩子走过青春期》《生命最初的三年》《那一刻该说什么》《学习心理与学习力》《儿童情绪管理全书》《儿童心理问题识别与家庭支持》八本育儿与心理电子书的介绍与试读。": "Yozer project hub — introductions to four Android apps (YozerMentalBook, YozerHealth, YozerPsychoMetric and YozerMentalAID) and eight parenting and psychology ebooks, with free previews.",
+  "悦泽心理会员专用 · 覆盖孕育、婴幼儿、学龄、青春期、情绪与学习 · 在线试读": "Members-only from Yozer Psychology · covering pregnancy, infancy, school age, adolescence, emotions and learning · preview online",
+  "8 本电子书": "8 ebooks",
+  "那一刻该说什么": "What to Say",
+  "100 张育儿情景话术卡，覆盖起床、吃饭、作业、情绪、社交等 8 组场景，每张给出“别这样说 / 这样更好 / 一句话原理”。": "100 parenting situation script cards covering eight scenarios — mornings, meals, homework, emotions, social conflict and more — each with what not to say, what to say instead and the one-line reason.",
+  "学习心理与学习力": "Learning Mind & Learning Power",
+  "小学生家长的学习能力培养指南，用“驱动力、专注力、方法力、复原力”四力模型，把学习心理学变成书桌旁用得上的方法。": "A guide for parents of primary-school children: the Four Powers model (drive, focus, method and resilience) turns learning psychology into methods you can use at the desk.",
+  "儿童情绪管理全书": "The Complete Book of Child Emotion Management",
+  "家长版从识别、命名、接纳到调节，陪孩子练就一生受用的情绪能力；书后附 17 页儿童互动练习册。": "The parent edition moves from recognising and naming emotions to accepting and regulating them, building a lifelong skill; includes a 17-page interactive child workbook.",
+  "儿童心理问题识别与家庭支持": "Recognising Child Mental Health Needs & Family Support",
+  "家长与教师的儿童心理健康识别与支持指南，用四个特征判断“要不要求助”，并讲清求助前准备与求助后配合；不替代诊断。": "A guide for parents and teachers to recognising and supporting child mental health: four features help decide whether to seek help, what to prepare and how to cooperate; it does not replace diagnosis.",
 });

@@ -10,11 +10,11 @@ global.window = global.window || global;
 // 各页专属补丁（生成后自动合并，使校验覆盖对应页面）。
 // 补丁脚本仅把条目 Object.assign 进 window.YH_DICT（无 module.exports），
 // 因此在 Node 下先声明 global.window，加载后从 global.YH_DICT 取合并结果。
-['i18n-dict-privacy.js', 'i18n-dict-psychometric.js', 'i18n-dict-mentalaid.js', 'i18n-dict-parenting.js', 'i18n-dict-seeing.js', 'i18n-dict-adolescence.js', 'i18n-dict-years.js', 'i18n-dict-apps.js'].forEach(function (patch) {
+['i18n-dict-privacy.js', 'i18n-dict-psychometric.js', 'i18n-dict-mentalaid.js', 'i18n-dict-parenting.js', 'i18n-dict-seeing.js', 'i18n-dict-adolescence.js', 'i18n-dict-years.js', 'i18n-dict-words.js', 'i18n-dict-learning.js', 'i18n-dict-emotions.js', 'i18n-dict-signals.js', 'i18n-dict-apps.js'].forEach(function (patch) {
   try { require(path.join(ROOT, 'public/assets/' + patch)); Object.assign(dict, global.window.YH_DICT || {}); } catch (e) { /* 补丁可选 */ }
 });
 const ATTRS = ['placeholder', 'title', 'alt', 'aria-label', 'content', 'value'];
-const files = ['public/index.html', 'public/yozerhealth.html', 'public/mentalbook.html', 'public/privacy.html', 'public/psychometric.html', 'public/mentalaid.html', 'public/parenting.html', 'public/seeing-each-other.html', 'public/adolescence.html', 'public/first-three-years.html'];
+const files = ['public/index.html', 'public/yozerhealth.html', 'public/mentalbook.html', 'public/privacy.html', 'public/psychometric.html', 'public/mentalaid.html', 'public/parenting.html', 'public/seeing-each-other.html', 'public/adolescence.html', 'public/first-three-years.html', 'public/what-to-say.html', 'public/learning-power.html', 'public/emotion-management.html', 'public/child-mental-health.html'];
 const norm = (s) => String(s).replace(/\s+/g, ' ').trim();
 const dictNorm = new Set(Object.keys(dict).map(norm));
 

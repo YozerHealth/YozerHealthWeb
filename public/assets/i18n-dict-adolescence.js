@@ -175,5 +175,9 @@ Object.assign(window.YH_DICT, {
   "育儿手册": "Parenting Handbook",
   "看见彼此": "Seeing Each Other",
   "生命最初的三年": "The First Three Years",
+  "那一刻该说什么": "What to Say",
+  "学习心理与学习力": "Learning Mind & Learning Power",
+  "儿童情绪管理全书": "The Complete Book of Child Emotion Management",
+  "儿童心理问题识别与家庭支持": "Recognising Child Mental Health Needs",
   "本电子书为悦泽心理会员专用，仅供个人学习参考，不替代专业医疗、心理或教育诊断。": "This ebook is for Yozer Psychology members, for personal study and reference only; it does not replace professional medical, psychological or educational diagnosis.",
 });
