@@ -4,6 +4,38 @@
   const $ = (s) => document.querySelector(s);
   const root = document.documentElement;
 
+  /* ---------- 安全的翻译函数 ----------
+   * 若 i18n.js 因网络问题未加载，YH 不存在时返回中文原文，绝不抛错，
+   * 避免中断后续脚本（否则滚动揭示等内容会永久隐藏）。 */
+  function t(zh) {
+    return (window.YH && typeof window.YH.t === 'function') ? window.YH.t(zh) : zh;
+  }
+  function isEn() {
+    return !!(window.YH && typeof window.YH.isEn === 'function' && window.YH.isEn());
+  }
+
+  /* ---------- 滚动揭示（最先执行，渐进增强） ----------
+   * 只有本段成功运行才给 <html> 打上 js-ready，CSS 才会隐藏 .reveal 元素。
+   * 脚本加载失败时不会打标记，内容默认全部可见，杜绝空白区块。 */
+  (function initReveal() {
+    const items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+    root.classList.add('js-ready');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      items.forEach(function (el) { io.observe(el); });
+    } else {
+      items.forEach(function (el) { el.classList.add('in'); });
+    }
+  })();
+
   /* ---------- 深浅主题 ---------- */
   const savedTheme = localStorage.getItem('yh_theme');
   if (savedTheme) root.dataset.theme = savedTheme;
@@ -71,7 +103,7 @@
     btn.addEventListener('click', function () {
       const target = document.getElementById(btn.dataset.copy);
       const text = target ? target.textContent.trim() : '';
-      if (!text || text.indexOf(YH.t('读取中')) >= 0) return;
+      if (!text || text.indexOf(t('读取中')) >= 0) return;
       const fallback = function () {
         const ta = document.createElement('textarea');
         ta.value = text;
@@ -79,11 +111,11 @@
         ta.style.opacity = '0';
         document.body.appendChild(ta);
         ta.select();
-        try { document.execCommand('copy'); toast(YH.t('SHA-256 已复制')); } catch (e) { toast(YH.t('复制失败，请手动选择')); }
+        try { document.execCommand('copy'); toast(t('SHA-256 已复制')); } catch (e) { toast(t('复制失败，请手动选择')); }
         document.body.removeChild(ta);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function () { toast(YH.t('SHA-256 已复制')); }).catch(fallback);
+        navigator.clipboard.writeText(text).then(function () { toast(t('SHA-256 已复制')); }).catch(fallback);
       } else fallback();
     });
   });
@@ -105,13 +137,13 @@
   /* ---------- 用静态数据填充版本与文件信息（无网络请求） ---------- */
   function fmtSize(n) {
     if (!n) return '—';
-    return (n / 1048576).toFixed(1) + ' MB (' + n.toLocaleString(YH.isEn() ? 'en-US' : 'zh-CN') + YH.t(' 字节)');
+    return (n / 1048576).toFixed(1) + ' MB (' + n.toLocaleString(isEn() ? 'en-US' : 'zh-CN') + t(' 字节)');
   }
   function fmtDate(s) {
     if (!s) return '—';
     const d = new Date(s);
     if (isNaN(d)) return '—';
-    return d.toLocaleString(YH.isEn() ? 'en-US' : 'zh-CN', { hour12: false });
+    return d.toLocaleString(isEn() ? 'en-US' : 'zh-CN', { hour12: false });
   }
   function setText(id, value) {
     const el = document.getElementById(id);
@@ -120,7 +152,7 @@
   const app = META.app;
   const r = META.variants.release;
   const g = META.variants.debug;
-  setText('heroSize', r.available ? YH.t('约 ') + (r.size / 1048576).toFixed(0) + ' MB' : '—');
+  setText('heroSize', r.available ? t('约 ') + (r.size / 1048576).toFixed(0) + ' MB' : '—');
   setText('dlVersion', 'V' + app.version);
   setText('dlCode', app.versionCode);
   ['R', 'D'].forEach(function (suffix) {
@@ -128,22 +160,6 @@
     setText('dlFile' + suffix, v.file);
     setText('dlSize' + suffix, fmtSize(v.size));
     setText('dlTime' + suffix, fmtDate(v.updatedAt));
-    setText('dlSha' + suffix, v.sha256 || YH.t('文件不可用'));
+    setText('dlSha' + suffix, v.sha256 || t('文件不可用'));
   });
-
-  /* ---------- 滚动揭示 ---------- */
-  const items = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    items.forEach(function (el) { io.observe(el); });
-  } else {
-    items.forEach(function (el) { el.classList.add('in'); });
-  }
 })();

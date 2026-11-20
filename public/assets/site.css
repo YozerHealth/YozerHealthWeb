@@ -292,9 +292,11 @@ img { max-width: 100%; display: block; }
 .footer-bottom a:hover { color: var(--primary); }
 .disclaimer { color: var(--warn); }
 
-/* ---------- 揭示动画 ---------- */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.in { opacity: 1; transform: none; }
+/* ---------- 揭示动画（渐进增强：JS 未运行时内容默认可见） ---------- */
+/* 默认所有内容可见；仅当 site.js 成功启动并打上 .js-ready 后，才启用滚动揭示动画。
+   这样即使脚本加载失败或报错，七大板块 / 目录 / 每章五步等内容也不会消失。 */
+html.js-ready .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+html.js-ready .reveal.in { opacity: 1; transform: none; }
 
 /* ---------- 响应式 ---------- */
 img { max-width: 100%; height: auto; }

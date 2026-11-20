@@ -1,6 +1,7 @@
 /* signals 详情页专属中英字典补丁 —— 通过 Object.assign 合并进 window.YH_DICT，主字典保持不变。 */
 window.YH_DICT = window.YH_DICT || {};
 Object.assign(window.YH_DICT, {
+  "写在前面": "Foreword",
   "4": "4",
   "7": "7",
   "10": "10",
