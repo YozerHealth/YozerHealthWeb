@@ -1,9 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "rewrites": [
-    { "source": "/download/:variant", "destination": "/api/download?variant=:variant" }
-  ],
   "headers": [
     {
       "source": "/(.*)",

@@ -1,4 +1,4 @@
-/* 悦泽健康官网 —— 交互脚本（零依赖） */
+/* 悦泽健康官网 —— 交互脚本（零依赖 · 纯静态，不含任何后端请求） */
 (function () {
   'use strict';
   const $ = (s) => document.querySelector(s);
@@ -17,34 +17,31 @@
     });
   }
 
-  /* ---------- 匿名访客标识（仅用于 UV 去重，不含任何身份信息） ---------- */
-  function newId() {
-    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
-    return 'v' + Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
-  }
-  let vid = localStorage.getItem('yh_vid');
-  if (!vid) {
-    vid = newId();
-    localStorage.setItem('yh_vid', vid);
-  }
-  document.cookie = 'yh_vid=' + encodeURIComponent(vid) + '; path=/; max-age=31536000; SameSite=Lax';
-
-  /* ---------- 访问埋点 ---------- */
-  fetch('/api/track', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      type: 'visit',
-      vid: vid,
-      page: location.pathname,
-      referrer: document.referrer || ''
-    }),
-    keepalive: true
-  }).then(function (r) {
-    if (!r.ok) console.warn('[悦泽健康] 访问统计写入云服务失败：HTTP ' + r.status);
-  }).catch(function (e) {
-    console.warn('[悦泽健康] 访问统计服务不可达：' + (e && e.message));
-  });
+  /* ---------- 静态应用元信息 ----------
+   * 来源：V1.0.0 真实构建产物 + 安装包文件的实际 SHA-256 / 大小 / 时间。
+   * 原 /api/meta 接口已随纯静态化移除，此处固化为常量，页面不再发起任何网络请求。
+   * 后续更新 APK 时，只需同步修改本常量与下载直链即可。 */
+  const META = {
+    app: { version: '1.0.0', versionCode: 23 },
+    variants: {
+      release: {
+        key: 'release',
+        file: 'YozerHealth-v1.0.0-release-arm64.apk',
+        size: 26402629,
+        updatedAt: '2026-11-09T18:39:54.000Z',
+        sha256: 'A62C8464D85BCBEAFAEC30B0E4096A4893645818DDE3CEA14A2969E8F6D78725',
+        available: true
+      },
+      debug: {
+        key: 'debug',
+        file: 'YozerHealth-v1.0.0-debug-arm64.apk',
+        size: 33817104,
+        updatedAt: '2026-11-09T18:39:54.000Z',
+        sha256: 'AA4B48C933F3B2CBFAFD6B125547FC9AF77FCA095873B898F9E98B34574755CA',
+        available: true
+      }
+    }
+  };
 
   /* ---------- 轻量提示 ---------- */
   function toast(msg) {
@@ -105,7 +102,7 @@
     });
   });
 
-  /* ---------- 从服务端读取真实版本与文件信息 ---------- */
+  /* ---------- 用静态数据填充版本与文件信息（无网络请求） ---------- */
   function fmtSize(n) {
     if (!n) return '—';
     return (n / 1048576).toFixed(1) + ' MB (' + n.toLocaleString(YH.isEn() ? 'en-US' : 'zh-CN') + YH.t(' 字节)');
@@ -120,32 +117,18 @@
     const el = document.getElementById(id);
     if (el) el.textContent = value;
   }
-  fetch('/api/meta').then(function (r) { return r.json(); }).then(function (d) {
-    if (!d.ok) return;
-    const app = d.app;
-    const r = d.variants.release;
-    const g = d.variants.debug;
-    setText('heroSize', r.available ? YH.t('约 ') + (r.size / 1048576).toFixed(0) + ' MB' : '—');
-    setText('dlVersion', 'V' + app.version);
-    setText('dlCode', app.versionCode);
-    ['R', 'D'].forEach(function (suffix) {
-      const v = suffix === 'R' ? r : g;
-      setText('dlFile' + suffix, v.file);
-      setText('dlSize' + suffix, fmtSize(v.size));
-      setText('dlTime' + suffix, fmtDate(v.updatedAt));
-      setText('dlSha' + suffix, v.sha256 || YH.t('文件不可用'));
-      if (!v.available) {
-        const link = document.querySelector('a[href="/download/' + v.key + '"]');
-        if (link) {
-          link.style.pointerEvents = 'none';
-          link.style.opacity = '.5';
-          link.textContent = YH.t('安装包暂不可用');
-        }
-      }
-    });
-  }).catch(function () {
-    setText('dlShaR', YH.t('无法读取'));
-    setText('dlShaD', YH.t('无法读取'));
+  const app = META.app;
+  const r = META.variants.release;
+  const g = META.variants.debug;
+  setText('heroSize', r.available ? YH.t('约 ') + (r.size / 1048576).toFixed(0) + ' MB' : '—');
+  setText('dlVersion', 'V' + app.version);
+  setText('dlCode', app.versionCode);
+  ['R', 'D'].forEach(function (suffix) {
+    const v = suffix === 'R' ? r : g;
+    setText('dlFile' + suffix, v.file);
+    setText('dlSize' + suffix, fmtSize(v.size));
+    setText('dlTime' + suffix, fmtDate(v.updatedAt));
+    setText('dlSha' + suffix, v.sha256 || YH.t('文件不可用'));
   });
 
   /* ---------- 滚动揭示 ---------- */
